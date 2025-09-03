@@ -1,6 +1,73 @@
+@use "../abstracts" as *;
+
 .pfp {
-  border-radius: 50%;
-  width: 112px;
-  height: 112px;
-  object-fit: cover;
+  $self: &;
+  &__image {
+    border-radius: 50%;
+    width: 112px;
+    height: 112px;
+    object-fit: cover;
+  }
+
+  &__quip {
+    position: relative;
+
+    &--one {
+      #{$self}__quip-text {
+        transform: rotate(22deg);
+        position: relative;
+        right: -20px;
+      }
+
+      #{$self}__quip-arrow {
+        transform: rotate(7deg);
+        position: absolute;
+        right: -10px;
+        top: -10px;
+      }
+    }
+
+    &--two {
+      display: flex;
+      gap: 20px;
+      margin-top: 15px;
+
+      #{$self}__quip-text {
+        transform: rotate(-15deg);
+        position: relative;
+        top: 10px;
+        right: -20px;
+      }
+
+      #{$self}__quip-arrow {
+        transform: rotate(15deg);
+        // position: absolute;
+        // right: -10px;
+        // top: -4px;
+      }
+    }
+
+    &--three {
+      #{$self}__quip-text {
+        position: relative;
+        bottom: -40px;
+        right: -30%;
+        transform: rotate(-18deg);
+        font-size: 16px;
+      }
+
+      #{$self}__quip-arrow {
+        transform: rotate(-18deg);
+        position: absolute;
+        left: 10px;
+        bottom: -10px;
+      }
+    }
+  }
+
+  &__quip-text {
+    font-family: $font-drawn;
+    font-size: 14px;
+    line-height: 1.5;
+  }
 }

@@ -1,3 +1,4 @@
+@use "sass:color";
 @use "../abstracts" as *;
 
 .my-card {
@@ -9,14 +10,21 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 30px;
     background-color: #fff;
     border-top-left-radius: $border-radius;
     border-top-right-radius: $border-radius;
   }
 
-  &__pfp-container {
-    text-align: center;
+  &__middle {
+    padding: 0 30px 30px 30px;
+  }
+
+  &__pfp {
+    // text-align: center;
+    padding: 33px 5px 5px;
+    display: grid;
+    grid-template-columns: 1fr 112px 1fr;
+    justify-content: center;
   }
 
   &__contacts {
@@ -30,25 +38,30 @@
   }
 
   &__contact-link {
+    cursor: pointer;
+    position: relative;
     display: block;
     text-align: center;
     background-color: #e7e7e7;
     padding: 15px 20px 15px 35px;
     border-radius: 25px;
-    position: relative;
-
     font-family: $font-secondary;
     font-weight: 500;
     font-size: 14px;
     text-align: center;
     text-decoration: none;
     color: #000;
-    cursor: pointer;
-
-    // cut off text with elipsis if too long
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    transition: background-color 0.15s ease;
+
+    &:hover {
+      background-color: darken(#e7e7e7, 5%);
+    }
+
+    &__phone:hover {
+    }
   }
 
   &__contact-icon {
@@ -87,7 +100,7 @@
     background-color: #51659b;
     border-bottom-left-radius: $border-radius;
     border-bottom-right-radius: $border-radius;
-    padding: 15px 30px;
+    padding: 12px 30px;
     color: #fff;
     font-family: $font-secondary;
     text-transform: uppercase;
@@ -96,6 +109,11 @@
     line-height: 1.5;
     text-align: center;
     letter-spacing: 2px;
+    transition: background-color 0.15s ease;
+
+    &:hover {
+      background-color: darken(#51659b, 5%);
+    }
   }
 
   &__vcf-icon {

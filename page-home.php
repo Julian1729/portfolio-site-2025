@@ -12,86 +12,123 @@ get_header();
   <div class="header__inner">
     <div class="my-card header__my-card">
       <div class="my-card__main">
-        <div class="my-card__pfp-container">
-          <img class="pfp my-card__pfp" src="<?php echo get_template_directory_uri(); ?>/assets/images/julian_2018.png" alt="Julian Hernandez when he was sexy and young">
+
+        <div class="my-card__pfp pfp">
+          <div class="pfp__quip-container">
+            <!-- fat photo quip -->
+            <div class="pfp__quip pfp__quip--one">
+              <img class="pfp__quip-arrow" src="<?php echo get_template_directory_uri(); ?>/assets/images/drawn-arrow-right-md.svg" alt="Handrawn arrow pointing at Julian's profile picture">
+              <p class="pfp__quip-text">
+                uses and old photo
+                <br>
+                because he got fat
+              </p>
+            </div>
+
+            <!-- can bench 315 quip -->
+            <div class="pfp__quip pfp__quip--two">
+              <p class="pfp__quip-text">
+                can bench 315 lbs
+                <br>
+                believe it or not
+              </p>
+              <img class="pfp__quip-arrow" src="<?php echo get_template_directory_uri(); ?>/assets/images/drawn-arrow-right-sm.svg" alt="Handrawn arrow pointing at Julian's profile picture">
+            </div>
+          </div>
+          <img class="pfp__image" src="<?php echo get_template_directory_uri(); ?>/assets/images/julian_2018.png" alt="Julian Hernandez when he was sexy and young">
+          <div class="pfp__quip-container">
+
+            <div class="pfp__quip pfp__quip--three">
+              <p class="pfp__quip-text">
+                27 years old...
+                <br>
+                but looks 32
+              </p>
+              <img class="pfp__quip-arrow" src="<?php echo get_template_directory_uri(); ?>/assets/images/drawn-arrow-left-md.svg" alt="Handrawn arrow pointing at Julian's profile picture">
+            </div>
+
+          </div>
         </div>
 
-        <div class="my-card__name-container">
-          <h1 class="myname">
-            <span class="myname__text myname__text--first">Julian</span>
-            <span class="myname__text myname__text--last">Hernandez</span>
-          </h1>
+        <div class="my-card__middle">
+
+          <div class="my-card__name-container">
+            <h1 class="myname">
+              <span class="myname__text myname__text--first">Julian</span>
+              <span class="myname__text myname__text--last">Hernandez</span>
+            </h1>
 
 
-          <nav class="my-card__contacts">
-            <ul class="my-card__contacts-list">
-              <!-- Phone -->
-              <li class="my-card__contacts-item">
-                <a href="tel:(215) 400-0468" class="my-card__contact-link">
-                  <i class="my-card__contact-icon">
-                    <?php the_svg('phone', null, 'Call Julian Hernandez'); ?>
-                  </i>
-                  <span class="my-card__contact-link-text">
-                    (215) 400-0468
-                  </span>
-                </a>
-              </li>
+            <nav class="my-card__contacts">
+              <ul class="my-card__contacts-list">
+                <!-- Phone -->
+                <li class="my-card__contacts-item">
+                  <a class="my-card__contact-link my-card__contact-link--phone" href="tel:(215) 400-0468">
+                    <i class="my-card__contact-icon">
+                      <?php the_svg('phone', null, 'Call Julian Hernandez'); ?>
+                    </i>
+                    <span class="my-card__contact-link-text">
+                      (215) 400-0468
+                    </span>
+                  </a>
+                </li>
 
-              <!-- Email -->
-              <li class="my-card__contacts-item">
-                <a class="my-card__contact-link" href="mailto:julian@julianhernandez.com">
-                  <i class="my-card__contact-icon my-card__contact-icon--mail">
-                    <?php the_svg('email', null, 'Call Julian Hernandez'); ?>
-                  </i>
-                  <span class="my-card__contact-link-text">
-                    julian@julianhernandez.me
-                  </span>
-                </a>
-              </li>
+                <!-- Email -->
+                <li class="my-card__contacts-item">
+                  <a class="my-card__contact-link my-card__contact-link--email" href="mailto:julian@julianhernandez.com">
+                    <i class="my-card__contact-icon my-card__contact-icon--mail">
+                      <?php the_svg('email', null, 'Call Julian Hernandez'); ?>
+                    </i>
+                    <span class="my-card__contact-link-text">
+                      julian@julianhernandez.me
+                    </span>
+                  </a>
+                </li>
 
-              <!-- Website -->
-              <li class="my-card__contacts-item">
-                <div class="my-card__contact-link" target="_blank">
-                  <i class="my-card__contact-icon my-card__contact-icon--mail">
-                    <?php the_svg('website', null, 'Call Julian Hernandez'); ?>
-                  </i>
-                  <span class="my-card__contact-link-text">
-                    julianhernandez.me
-                  </span>
-                </div>
-              </li>
+                <!-- Website -->
+                <li class="my-card__contacts-item">
+                  <div class="my-card__contact-link my-card__contact-link--website" target="_blank">
+                    <i class="my-card__contact-icon my-card__contact-icon--mail">
+                      <?php the_svg('website', null, 'Call Julian Hernandez'); ?>
+                    </i>
+                    <span class="my-card__contact-link-text">
+                      julianhernandez.me
+                    </span>
+                  </div>
+                </li>
 
-              <!-- LinkedIn -->
-              <li class="my-card__contacts-item">
-                <a class="my-card__contact-link" href="https://linkedin.com/in/julian1729" target="_blank">
-                  <i class="my-card__contact-icon my-card__contact-icon--mail">
-                    <?php the_svg('linkedin', null, 'Call Julian Hernandez'); ?>
-                  </i>
-                  <span class="my-card__contact-link-text">
-                    linkedin.com/in/julian1729
-                  </span>
-                </a>
-              </li>
+                <!-- LinkedIn -->
+                <li class="my-card__contacts-item">
+                  <a class="my-card__contact-link my-card__contact-link--linkedin" href="https://linkedin.com/in/julian1729" target="_blank">
+                    <i class="my-card__contact-icon my-card__contact-icon--mail">
+                      <?php the_svg('linkedin', null, 'Call Julian Hernandez'); ?>
+                    </i>
+                    <span class="my-card__contact-link-text">
+                      linkedin.com/in/julian1729
+                    </span>
+                  </a>
+                </li>
 
-              <!-- Github -->
-              <li class="my-card__contacts-item">
-                <a class="my-card__contact-link" href="https://github.com/Julian1729" target="_blank">
-                  <i class="my-card__contact-icon my-card__contact-icon--mail">
-                    <?php the_svg('github', null, 'Call Julian Hernandez'); ?>
-                  </i>
-                  <span class="my-card__contact-link-text">
-                    github.com/Julian1729
-                  </span>
-                </a>
-              </li>
+                <!-- Github -->
+                <li class="my-card__contacts-item">
+                  <a class="my-card__contact-link my-card__contact-link--github" href="https://github.com/Julian1729" target="_blank">
+                    <i class="my-card__contact-icon my-card__contact-icon--mail">
+                      <?php the_svg('github', null, 'Call Julian Hernandez'); ?>
+                    </i>
+                    <span class="my-card__contact-link-text">
+                      github.com/Julian1729
+                    </span>
+                  </a>
+                </li>
 
-            </ul>
-          </nav>
+              </ul>
+            </nav>
+          </div>
         </div>
       </div>
 
       <div class="my-card__footer">
-        <a class="my-card__vcf-btn" href="">
+        <a class="my-card__vcf-btn" href="<?php echo get_template_directory_uri(); ?>/assets/downloads/Julian Hernandez.vcf" download="JulianHernandez_FullStackDeveloper.vcf">
           Download VCF
 
           <i class="my-card__vcf-icon">
@@ -120,7 +157,7 @@ get_header();
 
       <p class="header__content-text">
 
-        <a class="button">Download my resume</a>
+        <a class="button" href="<?php echo get_template_directory_uri(); ?>/assets/downloads/JulianHernandez_FullStackDeveloper.pdf" download>Download my resume</a>
 
         <span class="header__seperator-text">or learn about</span>
 
@@ -130,7 +167,7 @@ get_header();
           <a class="button">My Projects</a>
         </span>
 
-        <span class="header__seperator-text">or TLDR</span>
+        <span class="header__seperator-text">or tldr</span>
 
 
         <span class="header__tldr">

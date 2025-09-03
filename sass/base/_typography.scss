@@ -1,0 +1,33 @@
+@use "../abstracts" as *;
+
+.page {
+  font-family: $font-primary;
+  font-smooth: antialiased;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                  Headings                                  */
+/* -------------------------------------------------------------------------- */
+.h1 {
+  font-family: $font-secondary;
+}
+
+.h2 {
+  font-family: $font-secondary;
+}
+
+.h3 {
+  font-family: $font-secondary;
+}
+
+.h4 {
+  font-family: $font-secondary;
+}
+
+.h5 {
+  font-family: $font-secondary;
+}
+
+.h6 {
+  font-family: $font-secondary;
+}

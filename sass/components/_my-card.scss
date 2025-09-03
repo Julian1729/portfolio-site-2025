@@ -1,0 +1,131 @@
+@use "../abstracts" as *;
+
+.my-card {
+  max-width: 400px;
+  width: 400px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  &__main {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px;
+    background-color: #fff;
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
+  }
+
+  &__pfp-container {
+    text-align: center;
+  }
+
+  &__contacts {
+    display: block;
+    width: 100%;
+  }
+
+  &__contacts-list {
+    display: grid;
+    gap: 19px;
+  }
+
+  &__contact-link {
+    display: block;
+    text-align: center;
+    background-color: #e7e7e7;
+    padding: 15px 20px 15px 35px;
+    border-radius: 25px;
+    position: relative;
+
+    font-family: $font-secondary;
+    font-weight: 500;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+    color: #000;
+    cursor: pointer;
+
+    // cut off text with elipsis if too long
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__contact-icon {
+    position: absolute;
+    left: 15px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: 20px;
+    width: 20px;
+    display: flex;
+    align-items: center;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__contact-link-text {
+    line-height: 1.3;
+    display: inline-block;
+    max-width: calc(100% - 35px);
+    vertical-align: middle;
+    // overflow with ellipsis if too long
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__vcf-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: #51659b;
+    border-bottom-left-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
+    padding: 15px 30px;
+    color: #fff;
+    font-family: $font-secondary;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.5;
+    text-align: center;
+    letter-spacing: 2px;
+  }
+
+  &__vcf-icon {
+    color: #fff;
+
+    svg {
+      width: 18px;
+      fill: #fff;
+    }
+  }
+}
+
+.myname {
+  font-family: $font-secondary;
+  font-weight: 800;
+  font-size: 32px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  -webkit-font-smoothing: antialiased;
+  margin-top: 18px;
+  margin-bottom: 25px;
+  line-height: 1.3;
+
+  &__text {
+    display: block;
+    text-align: center;
+    background: linear-gradient(90deg, #0b2362 15.38%, rgba(238, 62, 62, 0.69) 50.96%, #08457e 70.19%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+  }
+}

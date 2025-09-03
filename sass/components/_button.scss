@@ -1,0 +1,31 @@
+@use "../abstracts" as *;
+
+.button {
+  display: inline-block;
+  appearance: none;
+  border: none;
+  background-color: transparent;
+
+  border-radius: $border-radius;
+  box-shadow: inset 0 0 0 1px #fff;
+  text-transform: uppercase;
+  line-height: 1;
+
+  letter-spacing: 2px;
+  color: #fff;
+  padding: 12px 10px;
+  font-family: $font-secondary;
+  font-weight: 500;
+  font-size: 10px;
+
+  min-width: 150px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+  white-space: nowrap;
+
+  &:hover {
+    background-color: #fff;
+    color: #3a4f89;
+  }
+}

@@ -151,6 +151,23 @@ $julian_age_years = $julian_age->y;
 
     <!-- Content Section -->
     <div class="header__content-section">
+
+      <div class="header__skill-orbit skill-orbit">
+        <div class="skill-orbit__ring skill-orbit__ring--outer">
+          <div class="skill-orbit__item skill-orbit__item--1"><img class="skill-orbit__item-image" src="<?php echo get_template_directory_uri(); ?>/assets/icons/orbitter/node.svg" /></div>
+          <div class="skill-orbit__item skill-orbit__item--2"><img class="skill-orbit__item-image" src="<?php echo get_template_directory_uri(); ?>/assets/icons/orbitter/wordpress.svg" /></div>
+          <div class="skill-orbit__item skill-orbit__item--3"><img class="skill-orbit__item-image" src="<?php echo get_template_directory_uri(); ?>/assets/icons/orbitter/react.svg" /></div>
+          <div class="skill-orbit__item skill-orbit__item--4"><img class="skill-orbit__item-image" src="<?php echo get_template_directory_uri(); ?>/assets/icons/orbitter/php.svg" /></div>
+        </div>
+
+        <div class="skill-orbit__ring skill-orbit__ring--inner">
+          <div class="skill-orbit__item skill-orbit__item--1"><img class="skill-orbit__item-image" src="<?php echo get_template_directory_uri(); ?>/assets/icons/orbitter/mongodb.svg" /></div>
+          <div class="skill-orbit__item skill-orbit__item--2"><img class="skill-orbit__item-image" src="<?php echo get_template_directory_uri(); ?>/assets/icons/orbitter/sass-round.svg" /></div>
+          <div class="skill-orbit__item skill-orbit__item--3"><img class="skill-orbit__item-image" src="<?php echo get_template_directory_uri(); ?>/assets/icons/orbitter/express.svg" /></div>
+          <div class="skill-orbit__item skill-orbit__item--4"><img class="skill-orbit__item-image" src="<?php echo get_template_directory_uri(); ?>/assets/icons/orbitter/figma.svg" /></div>
+        </div>
+      </div>
+
       <div class="header__content-mobile-container">
 
         <!-- <img class="pfp header__mobile-pfp" src="<?php echo get_template_directory_uri(); ?>/assets/images/julian_2018.png" alt="Julian Hernandez when he was sexy and young"> -->
@@ -196,22 +213,6 @@ $julian_age_years = $julian_age->y;
           <span class="header__mobile-name header__mobile-name--first">Julian</span>
           <span class="header__mobile-name header__mobile-name--last">Hernandez</span>
         </h2>
-      </div>
-
-      <div class="header__skill-orbit skill-orbit">
-        <div class="skill-orbit__ring skill-orbit__ring--outer">
-          <div class="skill-orbit__item skill-orbit__item--1"><img class="skill-orbit__item-image" src="<?php echo get_template_directory_uri(); ?>/assets/icons/orbitter/node.svg" /></div>
-          <div class="skill-orbit__item skill-orbit__item--2"><img class="skill-orbit__item-image" src="<?php echo get_template_directory_uri(); ?>/assets/icons/orbitter/wordpress.svg" /></div>
-          <div class="skill-orbit__item skill-orbit__item--3"><img class="skill-orbit__item-image" src="<?php echo get_template_directory_uri(); ?>/assets/icons/orbitter/react.svg" /></div>
-          <div class="skill-orbit__item skill-orbit__item--4"><img class="skill-orbit__item-image" src="<?php echo get_template_directory_uri(); ?>/assets/icons/orbitter/php.svg" /></div>
-        </div>
-
-        <div class="skill-orbit__ring skill-orbit__ring--inner">
-          <div class="skill-orbit__item skill-orbit__item--1"><img class="skill-orbit__item-image" src="<?php echo get_template_directory_uri(); ?>/assets/icons/orbitter/mongodb.svg" /></div>
-          <div class="skill-orbit__item skill-orbit__item--2"><img class="skill-orbit__item-image" src="<?php echo get_template_directory_uri(); ?>/assets/icons/orbitter/sass-round.svg" /></div>
-          <div class="skill-orbit__item skill-orbit__item--3"><img class="skill-orbit__item-image" src="<?php echo get_template_directory_uri(); ?>/assets/icons/orbitter/express.svg" /></div>
-          <div class="skill-orbit__item skill-orbit__item--4"><img class="skill-orbit__item-image" src="<?php echo get_template_directory_uri(); ?>/assets/icons/orbitter/bootstrap.svg" /></div>
-        </div>
       </div>
 
       <div class="header__title">

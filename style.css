@@ -823,7 +823,7 @@ Text Domain: julian2025
 	        animation: spin-right 15s linear infinite;
 }
 .skill-orbit__ring--inner .skill-orbit__item--4 .skill-orbit__item-image {
-	max-width: 52%;
+	max-width: 60%;
 }
 .skill-orbit__item {
 	width: 25%;

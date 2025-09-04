@@ -10,6 +10,7 @@ $root: $path;
 $font-primary: "Amiko", serif;
 $font-secondary: "Spartan", sans-serif;
 $font-drawn: "Delicious Handrawn", sans-serif;
+$font-comic: "Bangers", sans-serif;
 // $font-primary: var(--wp--preset--font-family--primary); // sofia
 // $font-secondary: var(--wp--preset--font-family--secondary); // dm sans
 
@@ -52,8 +53,11 @@ $font-size-100: var(--wp--preset--font-size--gargantuan);
 $border-radius: 7px;
 
 /* -------------------------------------------------------------------------- */
-/*                                    Sizes                                   */
+/*                             Global Breakpoints                             */
 /* -------------------------------------------------------------------------- */
+$ipad-air: 820px;
+$ipad-pro: 1024px;
+$mobile: 500px;
 
 /* -------------------------------------------------------------------------- */
 /*                                   Columns                                  */

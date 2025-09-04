@@ -1,19 +1,30 @@
 <?php
 
 get_header();
+
+// calculage age for quip joke
+$julian_dob = new DateTime('1998-05-07');
+$today = new DateTime('now');
+$julian_age = $today->diff($julian_dob);
+$julian_age_years = $julian_age->y;
+
 ?>
 
 <header class="header">
 
-  <button class="header__idcta idcta">
+  <button class="header__idcta idcta" id="idcta-btn">
     <img class="idcta__icon" src="<?php echo get_template_directory_uri(); ?>/assets/icons/id.svg" alt="ID card icon">
   </button>
 
   <div class="header__inner">
     <div class="my-card header__my-card">
       <div class="my-card__main">
-
         <div class="my-card__pfp pfp">
+
+          <div class="pfp__bubble">
+            <blockquote class="pfp__bubble-blockquote"><em>Responsive</em>, huh? 😉</blockquote>
+          </div>
+
           <div class="pfp__quip-container">
             <!-- fat photo quip -->
             <div class="pfp__quip pfp__quip--one">
@@ -40,9 +51,9 @@ get_header();
 
             <div class="pfp__quip pfp__quip--three">
               <p class="pfp__quip-text">
-                27 years old...
+                <?php echo $julian_age_years; ?> years old...
                 <br>
-                but looks 32
+                but looks <?php echo $julian_age_years + 5; ?>
               </p>
               <img class="pfp__quip-arrow" src="<?php echo get_template_directory_uri(); ?>/assets/images/drawn-arrow-left-md.svg" alt="Handrawn arrow pointing at Julian's profile picture">
             </div>
@@ -51,9 +62,8 @@ get_header();
         </div>
 
         <div class="my-card__middle">
-
           <div class="my-card__name-container">
-            <h1 class="myname">
+            <h1 class="myname my-card__myname">
               <span class="myname__text myname__text--first">Julian</span>
               <span class="myname__text myname__text--last">Hernandez</span>
             </h1>
@@ -133,16 +143,54 @@ get_header();
 
           <i class="my-card__vcf-icon">
             <?php the_svg('download-vcf', null, 'Download VCF icon'); ?>
+          </i>
         </a>
       </div>
 
     </div>
 
+    <!-- Content Section -->
     <div class="header__content-section">
-
       <div class="header__content-mobile-container">
 
-        <img class="pfp header__mobile-pfp" src="<?php echo get_template_directory_uri(); ?>/assets/images/julian_2018.png" alt="Julian Hernandez when he was sexy and young">
+        <!-- <img class="pfp header__mobile-pfp" src="<?php echo get_template_directory_uri(); ?>/assets/images/julian_2018.png" alt="Julian Hernandez when he was sexy and young"> -->
+
+        <div class="pfp">
+          <div class="pfp__quip-container">
+            <!-- fat photo quip -->
+            <div class="pfp__quip pfp__quip--one">
+              <img class="pfp__quip-arrow" src="<?php echo get_template_directory_uri(); ?>/assets/images/drawn-arrow-right-md.svg" alt="Handrawn arrow pointing at Julian's profile picture">
+              <p class="pfp__quip-text">
+                uses and old photo
+                <br>
+                because he got fat
+              </p>
+            </div>
+
+            <!-- can bench 315 quip -->
+            <div class="pfp__quip pfp__quip--two">
+              <p class="pfp__quip-text">
+                can bench 315 lbs
+                <br>
+                believe it or not
+              </p>
+              <img class="pfp__quip-arrow" src="<?php echo get_template_directory_uri(); ?>/assets/images/drawn-arrow-right-sm.svg" alt="Handrawn arrow pointing at Julian's profile picture">
+            </div>
+          </div>
+          <img class="pfp__image" src="<?php echo get_template_directory_uri(); ?>/assets/images/julian_2018.png" alt="Julian Hernandez when he was sexy and young">
+          <div class="pfp__quip-container">
+
+            <div class="pfp__quip pfp__quip--three">
+              <p class="pfp__quip-text">
+                27 years old...
+                <br>
+                but looks 32
+              </p>
+              <img class="pfp__quip-arrow" src="<?php echo get_template_directory_uri(); ?>/assets/images/drawn-arrow-left-md.svg" alt="Handrawn arrow pointing at Julian's profile picture">
+            </div>
+
+          </div>
+        </div>
 
         <h2 class="header__mobile-name-container">
           <span class="header__mobile-name header__mobile-name--first">Julian</span>
@@ -179,8 +227,6 @@ get_header();
 
     </div>
   </div>
-
-
 
 </header>
 

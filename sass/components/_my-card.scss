@@ -1,10 +1,22 @@
 @use "sass:color";
 @use "../abstracts" as *;
 
+$clip_breakpoint: 600px; // NOTE: same as header clip-path change breakpoint
+
 .my-card {
   max-width: 400px;
   width: 400px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  @include between($clip_breakpoint, $ipad-air) {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  @include max($mobile) {
+    width: 100%;
+    max-width: 100%;
+  }
 
   &__main {
     justify-content: center;
@@ -13,18 +25,32 @@
     background-color: #fff;
     border-top-left-radius: $border-radius;
     border-top-right-radius: $border-radius;
+
+    @include between($clip_breakpoint, $ipad-air) {
+      border-radius: $border-radius;
+    }
   }
 
   &__middle {
     padding: 0 30px 30px 30px;
+
+    @include between($clip_breakpoint, $ipad-air) {
+      padding: 0 15px 25px 15px;
+    }
   }
 
   &__pfp {
     // text-align: center;
     padding: 33px 5px 5px;
-    display: grid;
-    grid-template-columns: 1fr 112px 1fr;
-    justify-content: center;
+  }
+
+  &__myname {
+    margin-top: 18px;
+    margin-bottom: 25px;
+
+    @include between($clip_breakpoint, $ipad-air) {
+      margin-bottom: 15px;
+    }
   }
 
   &__contacts {
@@ -35,6 +61,11 @@
   &__contacts-list {
     display: grid;
     gap: 19px;
+
+    @include between($clip_breakpoint, $ipad-air) {
+      display: flex;
+      justify-content: center;
+    }
   }
 
   &__contact-link {
@@ -62,6 +93,15 @@
 
     &__phone:hover {
     }
+
+    @include between($clip_breakpoint, $ipad-air) {
+      padding: 0;
+      height: 52px;
+      width: 72px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
 
   &__contact-icon {
@@ -79,6 +119,10 @@
       width: 100%;
       height: 100%;
     }
+
+    @include between($clip_breakpoint, $ipad-air) {
+      position: static;
+    }
   }
 
   &__contact-link-text {
@@ -90,6 +134,10 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+
+    @include between($clip_breakpoint, $ipad-air) {
+      display: none;
+    }
   }
 
   &__vcf-btn {
@@ -114,6 +162,10 @@
     &:hover {
       background-color: darken(#51659b, 5%);
     }
+
+    @include between($clip_breakpoint, $ipad-air) {
+      display: none;
+    }
   }
 
   &__vcf-icon {
@@ -133,8 +185,6 @@
   letter-spacing: 4px;
   text-transform: uppercase;
   -webkit-font-smoothing: antialiased;
-  margin-top: 18px;
-  margin-bottom: 25px;
   line-height: 1.3;
 
   &__text {

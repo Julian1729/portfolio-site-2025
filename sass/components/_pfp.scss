@@ -2,6 +2,11 @@
 
 .pfp {
   $self: &;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 112px 1fr;
+  justify-content: center;
+
   &__image {
     border-radius: 50%;
     width: 112px;
@@ -9,8 +14,12 @@
     object-fit: cover;
   }
 
-  &__quip {
+  &__quip-container {
     position: relative;
+  }
+
+  &__quip {
+    // position: relative;
 
     &--one {
       #{$self}__quip-text {
@@ -24,6 +33,22 @@
         position: absolute;
         right: -10px;
         top: -10px;
+      }
+
+      @include max($ipad-air) {
+        #{$self}__quip-text {
+          transform: rotate(22deg);
+          position: absolute;
+          right: 10px;
+          top: -5px;
+        }
+
+        #{$self}__quip-arrow {
+          transform: rotate(7deg);
+          position: absolute;
+          right: -10px;
+          top: -10px;
+        }
       }
     }
 
@@ -41,9 +66,21 @@
 
       #{$self}__quip-arrow {
         transform: rotate(15deg);
-        // position: absolute;
-        // right: -10px;
-        // top: -4px;
+      }
+
+      @include max($ipad-air) {
+        #{$self}__quip-text {
+          position: absolute;
+          top: unset;
+          bottom: 0;
+          right: 40px;
+        }
+
+        #{$self}__quip-arrow {
+          position: absolute;
+          right: 3px;
+          bottom: 25px;
+        }
       }
     }
 
@@ -60,14 +97,90 @@
         transform: rotate(-18deg);
         position: absolute;
         left: 10px;
-        bottom: -10px;
+        top: 20px;
+      }
+
+      @include max($ipad-air) {
+        #{$self}__quip-text {
+          position: absolute;
+          bottom: 12px;
+          left: 30px;
+        }
+
+        #{$self}__quip-arrow {
+          transform: rotate(-6deg);
+          position: absolute;
+          left: 10px;
+          bottom: 60px;
+        }
       }
     }
   }
 
   &__quip-text {
+    display: table;
     font-family: $font-drawn;
     font-size: 14px;
     line-height: 1.5;
+    color: #000;
+  }
+
+  // TODO: for bubble cleanup styles, shouldnt use so much padding, and should be its own component
+  &__bubble {
+    position: absolute;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(20%);
+    bottom: 82%;
+    left: 47%;
+    width: 175px;
+    height: 100px;
+    z-index: 1;
+
+    &--show {
+      // animate in for 5 seconds and then hide away
+      animation: bubble-in-out 7s ease-in-out;
+    }
+  }
+
+  // keyframs for bubble-in-out
+  @keyframes bubble-in-out {
+    0% {
+      opacity: 0;
+      transform: translateY(0) scale(0.5);
+    }
+    5% {
+      opacity: 1;
+      transform: translateY(0) scale(1.2);
+    }
+    7% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+    90% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(0) scale(0.5);
+    }
+  }
+
+  &__bubble-blockquote {
+    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/speech-bubble.svg);
+    // width: 25%;
+    padding-top: 22%;
+    padding-bottom: 0;
+    font-family: $font-comic;
+    background-position: center;
+    background-repeat: no-repeat !important;
+    background-size: 100% 100%;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    box-sizing: content-box;
+    line-height: 1;
   }
 }

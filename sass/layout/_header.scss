@@ -1,8 +1,7 @@
 @use "../abstracts" as *;
 
 $header_breakpoint_1: 875px;
-$header_breakpoint_2: 730px;
-$header_breakpoint_3: 500px; // mobile
+$header_breakpoint_2: 600px;
 
 .header {
   padding: 3vh 3vw;
@@ -12,9 +11,28 @@ $header_breakpoint_3: 500px; // mobile
   min-height: 100vh;
   background: radial-gradient(50% 50% at 50% 50%, #0b2362 0%, #3a4f89 0%, #222429 97.37%);
 
+  @include max($ipad-air) {
+    align-items: start;
+    padding-top: 6vh;
+
+    background: radial-gradient(50% 50% at 50% 50%, #0b2362 0%, #3a4f89 0%, #222429 88.65%);
+  }
+
+  @include max($header_breakpoint_2) {
+    // hide quips when in mobile view
+    .header__my-card .pfp__quip {
+      display: none;
+    }
+
+    // NOTE: invert color of quips, this is a bit hacky but it works for now
+    &__content-mobile-container .pfp__quip-container {
+      filter: brightness(1) invert(80%);
+    }
+  }
+
   &__idcta {
     display: none;
-    z-index: 1;
+    z-index: 2;
 
     @include max($header_breakpoint_2) {
       display: block;
@@ -23,8 +41,13 @@ $header_breakpoint_3: 500px; // mobile
 
   &__my-card {
     transition: clip-path 0.2s ease-in-out;
+    z-index: 1;
     // cubic bezier for a bit of bounce
     // transition: clip-path 0.5s cubic-bezier(0, 1.09, 1, -0.1);
+
+    @include max($ipad-air) {
+      margin-bottom: 40px;
+    }
 
     @include max($header_breakpoint_2) {
       position: fixed;
@@ -44,7 +67,12 @@ $header_breakpoint_3: 500px; // mobile
     justify-content: center;
     align-items: center;
 
+    @include max($ipad-air) {
+      flex-direction: column;
+    }
+
     @include max($header_breakpoint_2) {
+      // FIXME: remove if keeping 1-5
       flex-direction: column;
     }
   }
@@ -57,6 +85,10 @@ $header_breakpoint_3: 500px; // mobile
     @include max($header_breakpoint_1) {
       margin-left: 4vw;
     }
+
+    @include max($ipad-air) {
+      margin-left: 0;
+    }
   }
 
   &__content-mobile-container {
@@ -65,6 +97,10 @@ $header_breakpoint_3: 500px; // mobile
     @include max($header_breakpoint_2) {
       display: block;
     }
+  }
+
+  &__mobile-name-container {
+    margin-top: 20px;
   }
 
   &__mobile-name {
@@ -93,7 +129,7 @@ $header_breakpoint_3: 500px; // mobile
       color: #fff;
     }
 
-    @include max($header_breakpoint_3) {
+    @include max($mobile) {
       font-size: 30px;
     }
   }
@@ -114,7 +150,7 @@ $header_breakpoint_3: 500px; // mobile
       font-size: 48px;
     }
 
-    @include max($header_breakpoint_3) {
+    @include max($mobile) {
       font-size: 38px;
     }
   }

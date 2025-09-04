@@ -460,7 +460,8 @@ Text Domain: julian2025
 	-webkit-transform: rotate(22deg);
 	        transform: rotate(22deg);
 	position: relative;
-	right: -20px;
+	right: -30px;
+	top: -10px;
 }
 .pfp__quip--one .pfp__quip-arrow {
 	-webkit-transform: rotate(7deg);
@@ -750,6 +751,150 @@ Description: A portfolio site for Julian Hernandez
 Version: 1.0.0
 Text Domain: julian2025
 */
+.section-header {
+	color: #fff;
+	font-size: 36px;
+	font-weight: 800;
+	text-transform: uppercase;
+	font-family: "Spartan", sans-serif;
+	text-align: center;
+	letter-spacing: 4px;
+}
+
+/*!
+Theme Name: Julian 2025
+Theme URI: https://julianhernandez.me/
+Author: Julian Hernandez
+Author URI: https://julianhernandez./
+Description: A portfolio site for Julian Hernandez
+Version: 1.0.0
+Text Domain: julian2025
+*/
+.skill-orbit {
+	position: relative;
+	align-self: center;
+	height: 150px;
+	width: 150px;
+}
+.skill-orbit::after {
+	content: "";
+	height: 10%;
+	width: 10%;
+	background-color: rgba(0, 0, 0, 0.7);
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	border-radius: 50%;
+	z-index: 10;
+}
+.skill-orbit__ring {
+	box-sizing: border-box;
+	margin: 0;
+	position: relative;
+	height: 100%;
+	width: 100%;
+	border: dotted 6px rgba(0, 0, 0, 0.5);
+	border-radius: 50%;
+	-webkit-animation: spin-right 35s linear infinite;
+	        animation: spin-right 35s linear infinite;
+}
+.skill-orbit__ring--inner {
+	height: 50%;
+	width: 50%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	border: solid 2px rgba(0, 0, 0, 0.5);
+	-webkit-animation: spin-left 15s linear infinite;
+	        animation: spin-left 15s linear infinite;
+}
+.skill-orbit__ring--inner .skill-orbit__item {
+	height: 35%;
+	width: 35%;
+}
+.skill-orbit__ring--inner .skill-orbit__item-image {
+	-webkit-animation: spin-right 15s linear infinite;
+	        animation: spin-right 15s linear infinite;
+}
+.skill-orbit__ring--inner .skill-orbit__item--4 .skill-orbit__item-image {
+	max-width: 52%;
+}
+.skill-orbit__item {
+	width: 25%;
+	height: 25%;
+	background-color: rgba(0, 0, 0, 0.7);
+	border-radius: 50%;
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.skill-orbit__item--1 {
+	top: -12.5%;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	        transform: translateX(-50%);
+}
+.skill-orbit__item--2 {
+	right: -12.5%;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	        transform: translateY(-50%);
+}
+.skill-orbit__item--3 {
+	bottom: -12.5%;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	        transform: translateX(-50%);
+}
+.skill-orbit__item--4 {
+	left: -12.5%;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	        transform: translateY(-50%);
+}
+.skill-orbit__item-image {
+	max-width: 65%;
+	-webkit-animation: spin-left 35s linear infinite;
+	        animation: spin-left 35s linear infinite;
+}
+
+@-webkit-keyframes spin-right {
+	100% {
+		-webkit-transform: rotate(360deg);
+	}
+}
+
+@keyframes spin-right {
+	100% {
+		-webkit-transform: rotate(360deg);
+	}
+}
+@-webkit-keyframes spin-left {
+	100% {
+		-webkit-transform: rotate(-360deg);
+	}
+}
+@keyframes spin-left {
+	100% {
+		-webkit-transform: rotate(-360deg);
+	}
+}
+/*!
+Theme Name: Julian 2025
+Theme URI: https://julianhernandez.me/
+Author: Julian Hernandez
+Author URI: https://julianhernandez./
+Description: A portfolio site for Julian Hernandez
+Version: 1.0.0
+Text Domain: julian2025
+*/
 /*!
 Theme Name: Julian 2025
 Theme URI: https://julianhernandez.me/
@@ -847,6 +992,9 @@ Text Domain: julian2025
 		margin-left: 0;
 	}
 }
+.header__skill-orbit {
+	margin: 0 auto 25px auto;
+}
 .header__content-mobile-container {
 	display: none;
 }
@@ -942,5 +1090,28 @@ Text Domain: julian2025
 	max-width: 400px;
 	font-size: 14px;
 	line-height: 1.8;
+}
+
+.main {
+	position: relative;
+	padding-top: 125px;
+}
+
+.main-splat {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 500px;
+	pointer-events: none;
+	z-index: -1;
+}
+.main-splat__image {
+	position: relative;
+	transition: -webkit-clip-path 0.15s linear;
+	transition: clip-path 0.15s linear;
+	transition: clip-path 0.15s linear, -webkit-clip-path 0.15s linear;
+	display: flex;
+	width: 100%;
 }
 /*# sourceMappingURL=style.css.map */

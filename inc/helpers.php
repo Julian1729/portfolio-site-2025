@@ -6,7 +6,7 @@
 function get_svg($filename, $path = false, $title = '')
 {
   if ($path) {
-    $path = get_template_directory() . $filename . '.svg';
+    $path = get_template_directory() . $path;
   } else {
     $path = get_template_directory() . '/assets/icons/' . $filename . '.svg';
   }

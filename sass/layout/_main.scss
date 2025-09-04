@@ -1,0 +1,34 @@
+.main {
+  position: relative;
+  padding-top: 125px;
+}
+
+.main-splat {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 500px;
+  pointer-events: none;
+  z-index: -1;
+
+  &__image {
+    position: relative;
+    // clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+
+    transition: clip-path 0.15s linear;
+    // top: -200px;
+
+    display: flex;
+    width: 100%;
+    // clip-path: polygon(0% 0%, 1% 22%, 18% 14%, 33% 22%, 59% 9%, 73% 17%, 87% 10%, 100% 0);
+
+    &--show {
+      // clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+
+      // opacity: 1;
+    }
+
+    // opacity: 0;
+  }
+}

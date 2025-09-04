@@ -198,6 +198,22 @@ $julian_age_years = $julian_age->y;
         </h2>
       </div>
 
+      <div class="header__skill-orbit skill-orbit">
+        <div class="skill-orbit__ring skill-orbit__ring--outer">
+          <div class="skill-orbit__item skill-orbit__item--1"><img class="skill-orbit__item-image" src="<?php echo get_template_directory_uri(); ?>/assets/icons/orbitter/node.svg" /></div>
+          <div class="skill-orbit__item skill-orbit__item--2"><img class="skill-orbit__item-image" src="<?php echo get_template_directory_uri(); ?>/assets/icons/orbitter/wordpress.svg" /></div>
+          <div class="skill-orbit__item skill-orbit__item--3"><img class="skill-orbit__item-image" src="<?php echo get_template_directory_uri(); ?>/assets/icons/orbitter/react.svg" /></div>
+          <div class="skill-orbit__item skill-orbit__item--4"><img class="skill-orbit__item-image" src="<?php echo get_template_directory_uri(); ?>/assets/icons/orbitter/php.svg" /></div>
+        </div>
+
+        <div class="skill-orbit__ring skill-orbit__ring--inner">
+          <div class="skill-orbit__item skill-orbit__item--1"><img class="skill-orbit__item-image" src="<?php echo get_template_directory_uri(); ?>/assets/icons/orbitter/mongodb.svg" /></div>
+          <div class="skill-orbit__item skill-orbit__item--2"><img class="skill-orbit__item-image" src="<?php echo get_template_directory_uri(); ?>/assets/icons/orbitter/sass-round.svg" /></div>
+          <div class="skill-orbit__item skill-orbit__item--3"><img class="skill-orbit__item-image" src="<?php echo get_template_directory_uri(); ?>/assets/icons/orbitter/express.svg" /></div>
+          <div class="skill-orbit__item skill-orbit__item--4"><img class="skill-orbit__item-image" src="<?php echo get_template_directory_uri(); ?>/assets/icons/orbitter/bootstrap.svg" /></div>
+        </div>
+      </div>
+
       <div class="header__title">
         <span class="header__title-text header__title-text--top">FullStack</span>
         <span class="header__title-text header__title-text--bottom">Developer</span>
@@ -231,7 +247,24 @@ $julian_age_years = $julian_age->y;
 </header>
 
 <main class="main">
+  <div class="main-splat">
+    <img class="main-splat__image" src="<?php echo get_template_directory_uri(); ?>/assets/images/main-splat.svg" alt="Colorful paint splat">
+  </div>
 
+
+  <section class="skills-section">
+
+    <h3 class="section-header">My Skills</h3>
+
+    <ul class="skills-list">
+
+
+
+    </ul>
+
+    <div style="height: 2000px"></div>
+
+  </section>
 
 
 </main><!-- #main -->

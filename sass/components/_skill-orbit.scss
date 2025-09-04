@@ -1,0 +1,113 @@
+@use "../abstracts" as *;
+
+.skill-orbit {
+  position: relative;
+  align-self: center;
+  height: 150px;
+  width: 150px;
+
+  &::after {
+    content: "";
+    height: 10%;
+    width: 10%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    border-radius: 50%;
+    z-index: 10;
+  }
+
+  &__ring {
+    box-sizing: border-box;
+    margin: 0;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    border: dotted 6px rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    animation: spin-right 35s linear infinite;
+
+    &--inner {
+      height: 50%;
+      width: 50%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      border: solid 2px rgba(0, 0, 0, 0.5);
+      animation: spin-left 15s linear infinite;
+
+      .skill-orbit__item {
+        height: 35%;
+        width: 35%;
+      }
+
+      .skill-orbit__item-image {
+        animation: spin-right 15s linear infinite;
+      }
+
+      // adjust bootstrap icon
+      .skill-orbit__item--4 .skill-orbit__item-image {
+        max-width: 52%;
+      }
+    }
+  }
+
+  &__item {
+    width: 25%;
+    height: 25%;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 50%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &--1 {
+      top: -12.5%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &--2 {
+      right: -12.5%;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &--3 {
+      bottom: -12.5%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &--4 {
+      left: -12.5%;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  &__item-image {
+    max-width: 65%;
+    animation: spin-left 35s linear infinite;
+  }
+}
+
+@keyframes spin-right {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-left {
+  100% {
+    -webkit-transform: rotate(-360deg);
+  }
+}

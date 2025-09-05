@@ -6,6 +6,98 @@
   height: 150px;
   width: 150px;
 
+  &--type--photo {
+    $item_width: 20%;
+    height: 200px;
+    width: 200px;
+
+    @include max($mobile_sm) {
+      height: 125px;
+      width: 125px;
+    }
+
+    &::after {
+      display: none; // Hide the center dot for photo variant
+    }
+
+    // 8-item circular positioning for photo variant
+    .skill-orbit__item {
+      width: $item_width !important;
+      height: $item_width !important;
+      animation: spin-left 35s linear infinite; // Animate the items themselves
+    }
+
+    // Use direct descendant selectors for maximum specificity
+    .skill-orbit__item--1 {
+      // 0°: top (Node)
+      top: calc(50% - 50% - #{$item_width / 2}) !important;
+      left: calc(50% - #{$item_width / 2}) !important;
+      // transform: none !important;
+    }
+
+    .skill-orbit__item--2 {
+      // 45°: top-right (WordPress)
+      top: calc(50% - 35.355% - #{$item_width / 2}) !important;
+      left: calc(50% + 35.355% - #{$item_width / 2}) !important;
+      // transform: none !important;
+    }
+
+    .skill-orbit__item--3 {
+      // 90°: right (React)
+      top: calc(50% - #{$item_width / 2}) !important;
+      left: calc(50% + 50% - #{$item_width / 2}) !important;
+      // transform: none !important;
+    }
+
+    .skill-orbit__item--4 {
+      // 135°: bottom-right (PHP)
+      top: calc(50% + 35.355% - #{$item_width / 2}) !important;
+      left: calc(50% + 35.355% - #{$item_width / 2}) !important;
+      // transform: none !important;
+    }
+
+    .skill-orbit__item--5 {
+      // 180°: bottom (MongoDB)
+      top: calc(50% + 50% - #{$item_width / 2}) !important;
+      left: calc(50% - #{$item_width / 2}) !important;
+      // transform: none !important;
+    }
+
+    .skill-orbit__item--6 {
+      // 225°: bottom-left (Sass)
+      top: calc(50% + 35.355% - #{$item_width / 2}) !important;
+      left: calc(50% - 35.355% - #{$item_width / 2}) !important;
+      // transform: none !important;
+    }
+
+    .skill-orbit__item--7 {
+      // 270°: left (Express)
+      top: calc(50% - #{$item_width / 2}) !important;
+      left: calc(50% - 50% - #{$item_width / 2}) !important;
+      // transform: none !important;
+    }
+
+    .skill-orbit__item--8 {
+      // 315°: top-left (Figma)
+      top: calc(50% - 35.355% - #{$item_width / 2}) !important;
+      left: calc(50% - 35.355% - #{$item_width / 2}) !important;
+      // transform: none !important;
+    }
+
+    // Keep images stationary for photo variant
+    // .skill-orbit__item-image {
+    //   animation: spin-right 35s linear infinite; // Counter-rotate to keep images upright
+    // }
+  }
+
+  &__center-image {
+    position: absolute;
+    width: 65%;
+    height: 65%;
+    inset: 0;
+    margin: auto;
+  }
+
   &::after {
     content: "";
     height: 10%;
@@ -46,13 +138,10 @@
       .skill-orbit__item {
         height: 35%;
         width: 35%;
+        animation: spin-right 15s linear infinite; // Animate inner ring items
       }
 
-      .skill-orbit__item-image {
-        animation: spin-right 15s linear infinite;
-      }
-
-      // adjust bootstrap icon
+      // adjust figma icon
       .skill-orbit__item--4 .skill-orbit__item-image {
         max-width: 60%;
       }
@@ -68,35 +157,33 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    animation: spin-left 35s linear infinite; // Animate the items themselves
 
+    // Original 4-item positioning for standard variant
     &--1 {
       top: -12.5%;
-      left: 50%;
-      transform: translateX(-50%);
+      left: calc(50% - 12.5%);
     }
 
     &--2 {
       right: -12.5%;
-      top: 50%;
-      transform: translateY(-50%);
+      top: calc(50% - 12.5%);
     }
 
     &--3 {
       bottom: -12.5%;
-      left: 50%;
-      transform: translateX(-50%);
+      left: calc(50% - 12.5%);
     }
 
     &--4 {
       left: -12.5%;
-      top: 50%;
-      transform: translateY(-50%);
+      top: calc(50% - 12.5%);
     }
   }
 
   &__item-image {
     max-width: 65%;
-    animation: spin-left 35s linear infinite;
+    // animation: spin-right 35s linear infinite; // Counter-rotate to keep images upright
   }
 }
 

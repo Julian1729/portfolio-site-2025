@@ -14,7 +14,6 @@ $header_breakpoint_2: 600px;
   @include max($ipad-air) {
     align-items: start;
     padding-top: 6vh;
-
     background: radial-gradient(50% 50% at 50% 50%, #0b2362 0%, #3a4f89 0%, #222429 88.65%);
   }
 
@@ -93,6 +92,10 @@ $header_breakpoint_2: 600px;
 
   &__skill-orbit {
     margin: 0 auto 25px auto;
+
+    @include max($header_breakpoint_2) {
+      display: none;
+    }
   }
 
   &__content-mobile-container {
@@ -100,6 +103,14 @@ $header_breakpoint_2: 600px;
 
     @include max($header_breakpoint_2) {
       display: block;
+    }
+  }
+
+  &__mobile-skill-orbit {
+    margin: 0 auto 35px auto;
+
+    @include max($mobile_sm) {
+      margin-bottom: 25px;
     }
   }
 

@@ -457,11 +457,11 @@ Text Domain: julian2025
 	position: relative;
 }
 .pfp__quip--one .pfp__quip-text {
-	-webkit-transform: rotate(22deg);
-	        transform: rotate(22deg);
+	-webkit-transform: rotate(18deg);
+	        transform: rotate(18deg);
 	position: relative;
-	right: -30px;
-	top: -10px;
+	right: -24px;
+	top: -6px;
 }
 .pfp__quip--one .pfp__quip-arrow {
 	-webkit-transform: rotate(7deg);
@@ -497,6 +497,9 @@ Text Domain: julian2025
 	position: relative;
 	top: 10px;
 	right: -20px;
+	max-width: 85px;
+	-webkit-transform-origin: center;
+	        transform-origin: center;
 }
 .pfp__quip--two .pfp__quip-arrow {
 	-webkit-transform: rotate(15deg);
@@ -776,6 +779,64 @@ Text Domain: julian2025
 	height: 150px;
 	width: 150px;
 }
+.skill-orbit--type--photo {
+	height: 200px;
+	width: 200px;
+}
+@media screen and (max-width: 375px) {
+	.skill-orbit--type--photo {
+		height: 125px;
+		width: 125px;
+	}
+}
+.skill-orbit--type--photo::after {
+	display: none;
+}
+.skill-orbit--type--photo .skill-orbit__item {
+	width: 20% !important;
+	height: 20% !important;
+	-webkit-animation: spin-left 35s linear infinite;
+	        animation: spin-left 35s linear infinite;
+}
+.skill-orbit--type--photo .skill-orbit__item--1 {
+	top: calc(0% - 10%) !important;
+	left: calc(50% - 10%) !important;
+}
+.skill-orbit--type--photo .skill-orbit__item--2 {
+	top: calc(14.645% - 10%) !important;
+	left: calc(85.355% - 10%) !important;
+}
+.skill-orbit--type--photo .skill-orbit__item--3 {
+	top: calc(50% - 10%) !important;
+	left: calc(100% - 10%) !important;
+}
+.skill-orbit--type--photo .skill-orbit__item--4 {
+	top: calc(85.355% - 10%) !important;
+	left: calc(85.355% - 10%) !important;
+}
+.skill-orbit--type--photo .skill-orbit__item--5 {
+	top: calc(100% - 10%) !important;
+	left: calc(50% - 10%) !important;
+}
+.skill-orbit--type--photo .skill-orbit__item--6 {
+	top: calc(85.355% - 10%) !important;
+	left: calc(14.645% - 10%) !important;
+}
+.skill-orbit--type--photo .skill-orbit__item--7 {
+	top: calc(50% - 10%) !important;
+	left: calc(0% - 10%) !important;
+}
+.skill-orbit--type--photo .skill-orbit__item--8 {
+	top: calc(14.645% - 10%) !important;
+	left: calc(14.645% - 10%) !important;
+}
+.skill-orbit__center-image {
+	position: absolute;
+	width: 65%;
+	height: 65%;
+	inset: 0;
+	margin: auto;
+}
 .skill-orbit::after {
 	content: "";
 	height: 10%;
@@ -817,8 +878,6 @@ Text Domain: julian2025
 .skill-orbit__ring--inner .skill-orbit__item {
 	height: 35%;
 	width: 35%;
-}
-.skill-orbit__ring--inner .skill-orbit__item-image {
 	-webkit-animation: spin-right 15s linear infinite;
 	        animation: spin-right 15s linear infinite;
 }
@@ -834,35 +893,27 @@ Text Domain: julian2025
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	-webkit-animation: spin-left 35s linear infinite;
+	        animation: spin-left 35s linear infinite;
 }
 .skill-orbit__item--1 {
 	top: -12.5%;
-	left: 50%;
-	-webkit-transform: translateX(-50%);
-	        transform: translateX(-50%);
+	left: 37.5%;
 }
 .skill-orbit__item--2 {
 	right: -12.5%;
-	top: 50%;
-	-webkit-transform: translateY(-50%);
-	        transform: translateY(-50%);
+	top: 37.5%;
 }
 .skill-orbit__item--3 {
 	bottom: -12.5%;
-	left: 50%;
-	-webkit-transform: translateX(-50%);
-	        transform: translateX(-50%);
+	left: 37.5%;
 }
 .skill-orbit__item--4 {
 	left: -12.5%;
-	top: 50%;
-	-webkit-transform: translateY(-50%);
-	        transform: translateY(-50%);
+	top: 37.5%;
 }
 .skill-orbit__item-image {
 	max-width: 65%;
-	-webkit-animation: spin-left 35s linear infinite;
-	        animation: spin-left 35s linear infinite;
 }
 
 @-webkit-keyframes spin-right {
@@ -995,12 +1046,25 @@ Text Domain: julian2025
 .header__skill-orbit {
 	margin: 0 auto 25px auto;
 }
+@media screen and (max-width: 600px) {
+	.header__skill-orbit {
+		display: none;
+	}
+}
 .header__content-mobile-container {
 	display: none;
 }
 @media screen and (max-width: 600px) {
 	.header__content-mobile-container {
 		display: block;
+	}
+}
+.header__mobile-skill-orbit {
+	margin: 0 auto 35px auto;
+}
+@media screen and (max-width: 375px) {
+	.header__mobile-skill-orbit {
+		margin-bottom: 25px;
 	}
 }
 .header__mobile-name-container {

@@ -40,7 +40,6 @@ $julian_age_years = $julian_age->y;
             <div class="pfp__quip pfp__quip--two">
               <p class="pfp__quip-text">
                 can bench 315 lbs
-                <br>
                 believe it or not
               </p>
               <img class="pfp__quip-arrow" src="<?php echo get_template_directory_uri(); ?>/assets/images/drawn-arrow-right-sm.svg" alt="Handrawn arrow pointing at Julian's profile picture">
@@ -172,6 +171,7 @@ $julian_age_years = $julian_age->y;
 
         <!-- <img class="pfp header__mobile-pfp" src="<?php echo get_template_directory_uri(); ?>/assets/images/julian_2018.png" alt="Julian Hernandez when he was sexy and young"> -->
 
+        <?php /*
         <div class="pfp">
           <div class="pfp__quip-container">
             <!-- fat photo quip -->
@@ -207,8 +207,21 @@ $julian_age_years = $julian_age->y;
             </div>
 
           </div>
-        </div>
+        </div> */ ?>
 
+        <div class="header__mobile-skill-orbit skill-orbit skill-orbit--type--photo">
+          <img class="skill-orbit__center-image" src="<?php echo get_template_directory_uri(); ?>/assets/images/julian_2018.png" alt="Julian Hernandez when he was sexy and young">
+          <div class="skill-orbit__ring skill-orbit__ring--outer">
+            <div class="skill-orbit__item skill-orbit__item--1"><img class="skill-orbit__item-image" src="<?php echo get_template_directory_uri(); ?>/assets/icons/orbitter/node.svg" /></div>
+            <div class="skill-orbit__item skill-orbit__item--2"><img class="skill-orbit__item-image" src="<?php echo get_template_directory_uri(); ?>/assets/icons/orbitter/wordpress.svg" /></div>
+            <div class="skill-orbit__item skill-orbit__item--3"><img class="skill-orbit__item-image" src="<?php echo get_template_directory_uri(); ?>/assets/icons/orbitter/react.svg" /></div>
+            <div class="skill-orbit__item skill-orbit__item--4"><img class="skill-orbit__item-image" src="<?php echo get_template_directory_uri(); ?>/assets/icons/orbitter/php.svg" /></div>
+            <div class="skill-orbit__item skill-orbit__item--5"><img class="skill-orbit__item-image" src="<?php echo get_template_directory_uri(); ?>/assets/icons/orbitter/mongodb.svg" /></div>
+            <div class="skill-orbit__item skill-orbit__item--6"><img class="skill-orbit__item-image" src="<?php echo get_template_directory_uri(); ?>/assets/icons/orbitter/sass-round.svg" /></div>
+            <div class="skill-orbit__item skill-orbit__item--7"><img class="skill-orbit__item-image" src="<?php echo get_template_directory_uri(); ?>/assets/icons/orbitter/express.svg" /></div>
+            <div class="skill-orbit__item skill-orbit__item--8"><img class="skill-orbit__item-image" src="<?php echo get_template_directory_uri(); ?>/assets/icons/orbitter/figma.svg" /></div>
+          </div>
+        </div>
         <h2 class="header__mobile-name-container">
           <span class="header__mobile-name header__mobile-name--first">Julian</span>
           <span class="header__mobile-name header__mobile-name--last">Hernandez</span>

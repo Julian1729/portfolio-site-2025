@@ -23,10 +23,10 @@
 
     &--one {
       #{$self}__quip-text {
-        transform: rotate(22deg);
+        transform: rotate(18deg);
         position: relative;
-        right: -30px;
-        top: -10px;
+        right: -24px;
+        top: -6px;
       }
 
       #{$self}__quip-arrow {
@@ -63,6 +63,8 @@
         position: relative;
         top: 10px;
         right: -20px;
+        max-width: 85px; // Reduced to account for rotation
+        transform-origin: center;
       }
 
       #{$self}__quip-arrow {

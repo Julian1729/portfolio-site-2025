@@ -146,7 +146,11 @@ function julian2025_scripts()
 	wp_enqueue_style('julian2025-style', get_stylesheet_uri(), array(), _S_VERSION);
 	wp_style_add_data('julian2025-style', 'rtl', 'replace');
 
-	wp_enqueue_script('julian2025-custom-script', get_template_directory_uri() . '/js/custom-script.js', array(), _S_VERSION, true);
+	wp_deregister_script('jquery');
+	wp_enqueue_script('jquery', 'https://code.jquery.com/jquery-3.7.1.min.js', array(), '3.7.1', true);
+	wp_enqueue_script('tilt-js', get_template_directory_uri() . '/js/vendor/tilt.jquery.min.js', array('jquery'), '1.7.0', true);
+
+	wp_enqueue_script('julian2025-custom-script', get_template_directory_uri() . '/js/custom-script.js', array('jquery'), _S_VERSION, true);
 
 	if (is_singular() && comments_open() && get_option('thread_comments')) {
 		wp_enqueue_script('comment-reply');
@@ -169,6 +173,10 @@ require get_template_directory() . '/inc/template-tags.php';
  */
 require get_template_directory() . '/inc/template-functions.php';
 
+// Taxonomies and Post Types
+require get_template_directory() . '/inc/taxonomies.php';
+require get_template_directory() . '/inc/post-types.php';
+
 /**
  * Customizer additions.
  */
@@ -185,3 +193,51 @@ require get_template_directory() . '/inc/helpers.php';
 if (defined('JETPACK__VERSION')) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
+/**
+ * Allow SVG uploads
+ */
+function julian2025_allow_svg_uploads($mimes)
+{
+	$mimes['svg'] = 'image/svg+xml';
+	return $mimes;
+}
+add_filter('upload_mimes', 'julian2025_allow_svg_uploads');
+
+/**
+ * Fix SVG display in media library
+ */
+function julian2025_fix_svg_display($response, $attachment, $meta)
+{
+	if ($response['type'] === 'image' && $response['subtype'] === 'svg+xml') {
+		$response['image'] = array(
+			'src' => $response['url'],
+		);
+	}
+	return $response;
+}
+add_filter('wp_prepare_attachment_for_js', 'julian2025_fix_svg_display', 10, 3);
+
+/**
+ * Sanitize SVG uploads for security
+ */
+function julian2025_sanitize_svg($file)
+{
+	$file_name = isset($file['name']) ? $file['name'] : '';
+	$wp_filetype = wp_check_filetype_and_ext($file['tmp_name'], $file_name);
+	$type = !empty($wp_filetype['type']) ? $wp_filetype['type'] : '';
+
+	if ($type === 'image/svg+xml') {
+		$svg_content = file_get_contents($file['tmp_name']);
+
+		// Basic SVG sanitization - remove script tags and javascript
+		$svg_content = preg_replace('/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/mi', '', $svg_content);
+		$svg_content = preg_replace('/javascript:/i', '', $svg_content);
+		$svg_content = preg_replace('/on\w+\s*=/i', '', $svg_content);
+
+		file_put_contents($file['tmp_name'], $svg_content);
+	}
+
+	return $file;
+}
+add_filter('wp_handle_upload_prefilter', 'julian2025_sanitize_svg');

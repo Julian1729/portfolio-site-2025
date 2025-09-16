@@ -1,0 +1,17 @@
+.portfolio-section {
+  padding-top: 100px;
+  padding-bottom: 30px; // needed to hide overflow of tilt effect
+  overflow: hidden;
+
+  &__featured-list {
+    display: grid;
+    gap: 40px;
+  }
+
+  &__regular-list {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+  }
+}

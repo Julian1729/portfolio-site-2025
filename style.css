@@ -199,7 +199,7 @@ Text Domain: julian2025
 */
 .page {
 	font-family: "Amiko", serif;
-	font-smooth: antialiased;
+	-webkit-font-smoothing: antialiased;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -762,6 +762,7 @@ Text Domain: julian2025
 	font-family: "Spartan", sans-serif;
 	text-align: center;
 	letter-spacing: 4px;
+	margin-bottom: 45px;
 }
 
 /*!
@@ -799,36 +800,36 @@ Text Domain: julian2025
 	        animation: spin-left 35s linear infinite;
 }
 .skill-orbit--type--photo .skill-orbit__item--1 {
-	top: calc(0% - 10%) !important;
-	left: calc(50% - 10%) !important;
+	top: calc(0% - 20% / 2) !important;
+	left: calc(50% - 20% / 2) !important;
 }
 .skill-orbit--type--photo .skill-orbit__item--2 {
-	top: calc(14.645% - 10%) !important;
-	left: calc(85.355% - 10%) !important;
+	top: calc(14.645% - 20% / 2) !important;
+	left: calc(85.355% - 20% / 2) !important;
 }
 .skill-orbit--type--photo .skill-orbit__item--3 {
-	top: calc(50% - 10%) !important;
-	left: calc(100% - 10%) !important;
+	top: calc(50% - 20% / 2) !important;
+	left: calc(100% - 20% / 2) !important;
 }
 .skill-orbit--type--photo .skill-orbit__item--4 {
-	top: calc(85.355% - 10%) !important;
-	left: calc(85.355% - 10%) !important;
+	top: calc(85.355% - 20% / 2) !important;
+	left: calc(85.355% - 20% / 2) !important;
 }
 .skill-orbit--type--photo .skill-orbit__item--5 {
-	top: calc(100% - 10%) !important;
-	left: calc(50% - 10%) !important;
+	top: calc(100% - 20% / 2) !important;
+	left: calc(50% - 20% / 2) !important;
 }
 .skill-orbit--type--photo .skill-orbit__item--6 {
-	top: calc(85.355% - 10%) !important;
-	left: calc(14.645% - 10%) !important;
+	top: calc(85.355% - 20% / 2) !important;
+	left: calc(14.645% - 20% / 2) !important;
 }
 .skill-orbit--type--photo .skill-orbit__item--7 {
-	top: calc(50% - 10%) !important;
-	left: calc(0% - 10%) !important;
+	top: calc(50% - 20% / 2) !important;
+	left: calc(0% - 20% / 2) !important;
 }
 .skill-orbit--type--photo .skill-orbit__item--8 {
-	top: calc(14.645% - 10%) !important;
-	left: calc(14.645% - 10%) !important;
+	top: calc(14.645% - 20% / 2) !important;
+	left: calc(14.645% - 20% / 2) !important;
 }
 .skill-orbit__center-image {
 	position: absolute;
@@ -946,6 +947,335 @@ Description: A portfolio site for Julian Hernandez
 Version: 1.0.0
 Text Domain: julian2025
 */
+.pitem {
+	position: relative;
+	padding: 35px 15%;
+	background: radial-gradient(90.16% 143.01% at 15.32% 21.04%, rgba(165, 239, 255, 0.2) 0%, rgba(110, 191, 244, 0.0447917) 77.08%, rgba(70, 144, 213, 0) 100%);
+	background-blend-mode: overlay, normal;
+	-webkit-backdrop-filter: blur(35px);
+	        backdrop-filter: blur(35px);
+	/* Note: backdrop-filter has minimal browser support */
+	border-radius: 59px;
+	border: 1px solid transparent;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	-webkit-transform-style: preserve-3d;
+	        transform-style: preserve-3d;
+	overflow: hidden;
+	position: relative;
+	border: 1px solid rgba(255, 255, 255, 0.6);
+}
+@-webkit-keyframes rotate-border {
+	0% {
+		background: linear-gradient(90deg, hsl(197, 100%, 64%) 0%, hsl(339, 100%, 55%) 100%);
+	}
+	25% {
+		background: linear-gradient(180deg, hsl(197, 100%, 64%) 0%, hsl(339, 100%, 55%) 100%);
+	}
+	50% {
+		background: linear-gradient(270deg, hsl(197, 100%, 64%) 0%, hsl(339, 100%, 55%) 100%);
+	}
+	75% {
+		background: linear-gradient(360deg, hsl(197, 100%, 64%) 0%, hsl(339, 100%, 55%) 100%);
+	}
+	100% {
+		background: linear-gradient(450deg, hsl(197, 100%, 64%) 0%, hsl(339, 100%, 55%) 100%);
+	}
+}
+@keyframes rotate-border {
+	0% {
+		background: linear-gradient(90deg, hsl(197, 100%, 64%) 0%, hsl(339, 100%, 55%) 100%);
+	}
+	25% {
+		background: linear-gradient(180deg, hsl(197, 100%, 64%) 0%, hsl(339, 100%, 55%) 100%);
+	}
+	50% {
+		background: linear-gradient(270deg, hsl(197, 100%, 64%) 0%, hsl(339, 100%, 55%) 100%);
+	}
+	75% {
+		background: linear-gradient(360deg, hsl(197, 100%, 64%) 0%, hsl(339, 100%, 55%) 100%);
+	}
+	100% {
+		background: linear-gradient(450deg, hsl(197, 100%, 64%) 0%, hsl(339, 100%, 55%) 100%);
+	}
+}
+.pitem__link-wrapper::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 1;
+}
+.pitem__content {
+	margin: 0 auto;
+	text-align: center;
+}
+.pitem__heading {
+	display: flex;
+	flex-direction: column;
+}
+.pitem__logo {
+	display: block;
+	margin: 0 auto 30px auto;
+	max-width: 200px;
+	max-height: 100%;
+	-o-object-fit: contain;
+	   object-fit: contain;
+}
+.pitem__cats {
+	margin-bottom: 20px;
+	order: 2;
+}
+.pitem__title {
+	font-family: "Spartan", sans-serif;
+	font-size: 36px;
+	color: #fff;
+	font-weight: 600;
+	margin-bottom: 20px;
+	-webkit-transform: translateZ(50px);
+	        transform: translateZ(50px);
+}
+.pitem__description {
+	font-size: 16px;
+	color: #fff;
+	line-height: 1.5;
+}
+.pitem__tech-pills {
+	margin-top: 35px;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+	gap: 12px;
+}
+.pitem__exlink {
+	position: absolute;
+	right: 48px;
+	top: 30px;
+	z-index: 99;
+}
+.pitem--featured {
+	padding: 0;
+	border: none;
+}
+.pitem--featured::before {
+	content: "";
+	position: absolute;
+	inset: -1px;
+	padding: 3px;
+	background: linear-gradient(90deg, hsl(197, 100%, 64%) 0%, hsl(339, 100%, 55%) 100%);
+	border-radius: inherit;
+	-webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+	        mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+	-webkit-mask-composite: xor;
+	        mask-composite: xor;
+	-webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+	-webkit-mask-composite: xor;
+	-webkit-animation: rotate-border 60s linear infinite;
+	        animation: rotate-border 60s linear infinite;
+	z-index: -1;
+}
+.pitem--featured .pitem__content {
+	padding: 85px 48px;
+	max-width: 45%;
+	margin: 0;
+	text-align: left;
+}
+@media screen and (max-width: 1000px) {
+	.pitem--featured .pitem__content {
+		max-width: 65%;
+	}
+}
+@media screen and (max-width: 720px) {
+	.pitem--featured .pitem__content {
+		max-width: 75%;
+	}
+}
+@media screen and (max-width: 575px) {
+	.pitem--featured .pitem__content {
+		max-width: 100%;
+	}
+}
+@media screen and (max-width: 1000px) {
+	.pitem--featured .pitem__tech-pills {
+		max-width: 83%;
+	}
+}
+.pitem--featured .pitem__title {
+	margin-bottom: 32px;
+}
+.pitem--featured .pitem__logo {
+	position: absolute;
+	top: 30px;
+	left: 48px;
+	max-height: 76px;
+	max-width: 200px;
+	display: none;
+}
+.pitem--featured .pitem__image-window {
+	height: 200%;
+	width: 55%;
+	position: absolute;
+	top: -15%;
+	left: 50%;
+	background-color: #000;
+	-webkit-transform: rotate(38deg) translateZ(50px);
+	        transform: rotate(38deg) translateZ(50px);
+	opacity: 0.2;
+	overflow: hidden;
+}
+@media screen and (max-width: 1000px) {
+	.pitem--featured .pitem__image-window {
+		left: 55%;
+		-webkit-transform: rotate(25deg) translateZ(50px);
+		        transform: rotate(25deg) translateZ(50px);
+	}
+}
+@media screen and (max-width: 720px) {
+	.pitem--featured .pitem__image-window {
+		left: 70%;
+		width: 35%;
+		-webkit-transform: none;
+		        transform: none;
+	}
+}
+@media screen and (max-width: 575px) {
+	.pitem--featured .pitem__image-window {
+		display: none;
+	}
+}
+.pitem--featured .pitem__image {
+	height: 100%;
+	-o-object-fit: cover;
+	   object-fit: cover;
+	-o-object-position: left;
+	   object-position: left;
+}
+
+/*!
+Theme Name: Julian 2025
+Theme URI: https://julianhernandez.me/
+Author: Julian Hernandez
+Author URI: https://julianhernandez./
+Description: A portfolio site for Julian Hernandez
+Version: 1.0.0
+Text Domain: julian2025
+*/
+.cats {
+	display: flex;
+	flex-wrap: wrap;
+	-webkit-column-gap: 24px;
+	   -moz-column-gap: 24px;
+	        column-gap: 24px;
+	row-gap: 12px;
+}
+.cats--centered {
+	justify-content: center;
+}
+.cats__item {
+	position: relative;
+	font-family: "Spartan", sans-serif;
+	text-transform: uppercase;
+	color: rgba(255, 255, 255, 0.8);
+	font-weight: 500;
+	font-size: 12px;
+	line-height: 1.1;
+}
+.cats__item::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	left: calc(100% + 12px);
+	width: 3px;
+	height: 3px;
+	background-color: #a5efff;
+	border-radius: 50%;
+}
+.cats__item:last-child::after {
+	display: none;
+}
+
+/*!
+Theme Name: Julian 2025
+Theme URI: https://julianhernandez.me/
+Author: Julian Hernandez
+Author URI: https://julianhernandez./
+Description: A portfolio site for Julian Hernandez
+Version: 1.0.0
+Text Domain: julian2025
+*/
+.tech-pill {
+	font-size: 11px;
+	font-weight: 500;
+	font-family: "Spartan", sans-serif;
+	text-transform: uppercase;
+	line-height: 1.1;
+	text-decoration: none;
+	padding: 8px 10px 6px 10px;
+	border-radius: 12px;
+	background-color: transparent;
+	box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.3);
+	color: #fff;
+	text-align: center;
+}
+
+/*!
+Theme Name: Julian 2025
+Theme URI: https://julianhernandez.me/
+Author: Julian Hernandez
+Author URI: https://julianhernandez./
+Description: A portfolio site for Julian Hernandez
+Version: 1.0.0
+Text Domain: julian2025
+*/
+.exlink {
+	display: block;
+	background-image: url("/wp-content/themes/julian2025/assets/icons/external-link.svg");
+	background-repeat: no-repeat;
+	background-size: 30px;
+	background-position: center;
+	background-color: rgba(0, 0, 0, 0.5);
+	border-radius: 50%;
+}
+.exlink--extended::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/*!
+Theme Name: Julian 2025
+Theme URI: https://julianhernandez.me/
+Author: Julian Hernandez
+Author URI: https://julianhernandez./
+Description: A portfolio site for Julian Hernandez
+Version: 1.0.0
+Text Domain: julian2025
+*/
+/*!
+Theme Name: Julian 2025
+Theme URI: https://julianhernandez.me/
+Author: Julian Hernandez
+Author URI: https://julianhernandez./
+Description: A portfolio site for Julian Hernandez
+Version: 1.0.0
+Text Domain: julian2025
+*/
+.page {
+	background-color: #8699aa;
+}
+
+.container {
+	max-width: 1260px;
+	padding-left: 30px;
+	padding-right: 30px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 /*!
 Theme Name: Julian 2025
 Theme URI: https://julianhernandez.me/
@@ -1156,9 +1486,19 @@ Text Domain: julian2025
 	line-height: 1.8;
 }
 
+/*!
+Theme Name: Julian 2025
+Theme URI: https://julianhernandez.me/
+Author: Julian Hernandez
+Author URI: https://julianhernandez./
+Description: A portfolio site for Julian Hernandez
+Version: 1.0.0
+Text Domain: julian2025
+*/
 .main {
 	position: relative;
 	padding-top: 125px;
+	z-index: 0;
 }
 
 .main-splat {
@@ -1166,16 +1506,89 @@ Text Domain: julian2025
 	top: 0;
 	left: 0;
 	right: 0;
-	height: 500px;
 	pointer-events: none;
 	z-index: -1;
+	overflow: hidden;
+}
+.main-splat::before {
+	content: "";
+	position: relative;
+	width: 100%;
+	height: 0;
+	display: block;
+	background-color: #232429;
+}
+@media screen and (max-width: 700px) {
+	.main-splat::before {
+		height: 20vh;
+	}
+}
+@media screen and (max-width: 500px) {
+	.main-splat::before {
+		height: 35vh;
+	}
 }
 .main-splat__image {
 	position: relative;
-	transition: -webkit-clip-path 0.15s linear;
-	transition: clip-path 0.15s linear;
-	transition: clip-path 0.15s linear, -webkit-clip-path 0.15s linear;
 	display: flex;
 	width: 100%;
+	top: clamp(-600px, -20vw, -200px);
+}
+@media screen and (max-width: 768px) {
+	.main-splat__image {
+		top: 0;
+		width: 150%;
+	}
+}
+@media screen and (max-width: 500px) {
+	.main-splat__image {
+		width: 200%;
+	}
+}
+/*!
+Theme Name: Julian 2025
+Theme URI: https://julianhernandez.me/
+Author: Julian Hernandez
+Author URI: https://julianhernandez./
+Description: A portfolio site for Julian Hernandez
+Version: 1.0.0
+Text Domain: julian2025
+*/
+.skills-list {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	gap: 40px 60px;
+	flex-wrap: wrap;
+}
+.skills-list__item {
+	text-align: center;
+}
+.skills-list__name {
+	color: #acacac;
+	text-transform: uppercase;
+	font-size: 15px;
+	letter-spacing: 2px;
+	margin-bottom: 15px;
+}
+.skills-list__icon {
+	max-height: 58px;
+	width: auto;
+}
+
+.portfolio-section {
+	padding-top: 100px;
+	padding-bottom: 30px;
+	overflow: hidden;
+}
+.portfolio-section__featured-list {
+	display: grid;
+	gap: 40px;
+}
+.portfolio-section__regular-list {
+	margin-top: 30px;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+	gap: 40px;
 }
 /*# sourceMappingURL=style.css.map */

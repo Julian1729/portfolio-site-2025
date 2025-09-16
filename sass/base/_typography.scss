@@ -2,7 +2,7 @@
 
 .page {
   font-family: $font-primary;
-  font-smooth: antialiased;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* -------------------------------------------------------------------------- */

@@ -30,57 +30,57 @@
     // Use direct descendant selectors for maximum specificity
     .skill-orbit__item--1 {
       // 0°: top (Node)
-      top: calc(50% - 50% - #{$item_width / 2}) !important;
-      left: calc(50% - #{$item_width / 2}) !important;
+      top: calc(50% - 50% - calc(#{$item_width} / 2)) !important;
+      left: calc(50% - calc(#{$item_width} / 2)) !important;
       // transform: none !important;
     }
 
     .skill-orbit__item--2 {
       // 45°: top-right (WordPress)
-      top: calc(50% - 35.355% - #{$item_width / 2}) !important;
-      left: calc(50% + 35.355% - #{$item_width / 2}) !important;
+      top: calc(50% - 35.355% - calc(#{$item_width} / 2)) !important;
+      left: calc(50% + 35.355% - calc(#{$item_width} / 2)) !important;
       // transform: none !important;
     }
 
     .skill-orbit__item--3 {
       // 90°: right (React)
-      top: calc(50% - #{$item_width / 2}) !important;
-      left: calc(50% + 50% - #{$item_width / 2}) !important;
+      top: calc(50% - calc(#{$item_width} / 2)) !important;
+      left: calc(50% + 50% - calc(#{$item_width} / 2)) !important;
       // transform: none !important;
     }
 
     .skill-orbit__item--4 {
       // 135°: bottom-right (PHP)
-      top: calc(50% + 35.355% - #{$item_width / 2}) !important;
-      left: calc(50% + 35.355% - #{$item_width / 2}) !important;
+      top: calc(50% + 35.355% - calc(#{$item_width} / 2)) !important;
+      left: calc(50% + 35.355% - calc(#{$item_width} / 2)) !important;
       // transform: none !important;
     }
 
     .skill-orbit__item--5 {
       // 180°: bottom (MongoDB)
-      top: calc(50% + 50% - #{$item_width / 2}) !important;
-      left: calc(50% - #{$item_width / 2}) !important;
+      top: calc(50% + 50% - calc(#{$item_width} / 2)) !important;
+      left: calc(50% - calc(#{$item_width} / 2)) !important;
       // transform: none !important;
     }
 
     .skill-orbit__item--6 {
       // 225°: bottom-left (Sass)
-      top: calc(50% + 35.355% - #{$item_width / 2}) !important;
-      left: calc(50% - 35.355% - #{$item_width / 2}) !important;
+      top: calc(50% + 35.355% - calc(#{$item_width} / 2)) !important;
+      left: calc(50% - 35.355% - calc(#{$item_width} / 2)) !important;
       // transform: none !important;
     }
 
     .skill-orbit__item--7 {
       // 270°: left (Express)
-      top: calc(50% - #{$item_width / 2}) !important;
-      left: calc(50% - 50% - #{$item_width / 2}) !important;
+      top: calc(50% - calc(#{$item_width} / 2)) !important;
+      left: calc(50% - 50% - calc(#{$item_width} / 2)) !important;
       // transform: none !important;
     }
 
     .skill-orbit__item--8 {
       // 315°: top-left (Figma)
-      top: calc(50% - 35.355% - #{$item_width / 2}) !important;
-      left: calc(50% - 35.355% - #{$item_width / 2}) !important;
+      top: calc(50% - 35.355% - calc(#{$item_width} / 2)) !important;
+      left: calc(50% - 35.355% - calc(#{$item_width} / 2)) !important;
       // transform: none !important;
     }
 

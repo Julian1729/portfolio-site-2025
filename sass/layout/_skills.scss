@@ -1,0 +1,29 @@
+@use "../abstracts" as *;
+
+.skills-section {
+}
+
+.skills-list {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px 60px;
+  flex-wrap: wrap;
+
+  &__item {
+    text-align: center;
+  }
+
+  &__name {
+    color: #acacac;
+    text-transform: uppercase;
+    font-size: 15px;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+  }
+
+  &__icon {
+    max-height: 58px;
+    width: auto;
+  }
+}

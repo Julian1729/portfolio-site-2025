@@ -96,16 +96,11 @@
     "wordpress"
   ],
   "intelephense.environment.includePaths": [
-    "/Users/julian1729/Local Sites/julian2025/app/public"
+    "/Users/julian1729/Local Sites/julian2025/app/public",
+    "/Users/julian1729/Local Sites/julian2025/app/public/wp-content/plugins/advanced-custom-fields-pro"
   ],
-  "intelephense.files.associations": [
-    "*.php",
-    "*.phtml"
-  ],
-  "intelephense.files.exclude": [
-    "**/node_modules/**",
-    "**/vendor/**"
-  ],
+  "intelephense.files.associations": ["*.php", "*.phtml"],
+  "intelephense.files.exclude": ["**/node_modules/**", "**/vendor/**"],
   "prettier.requireConfig": false,
   "prettier.useEditorConfig": false
 }

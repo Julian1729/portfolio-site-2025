@@ -1,0 +1,69 @@
+@use "../abstracts" as *;
+
+.witem {
+  // padding: 30px;
+
+  &__title {
+    font-size: 32px;
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  &__meta {
+    margin-bottom: 15px;
+  }
+
+  &__logo {
+    display: block;
+    margin-bottom: 20px;
+    width: 100px;
+    height: auto;
+    object-fit: contain;
+
+    &--company--doctor-multimedia {
+      width: 170px;
+    }
+
+    &--company--premiere-brand {
+      width: 50px;
+    }
+  }
+
+  &__logo-link {
+    display: inline-block;
+  }
+
+  &__description {
+    @include wsywig(light);
+
+    li {
+      // Cycle through bullet points every 4 items
+      &:nth-of-type(5n + 1) {
+        list-style-image: url($root + "/assets/icons/x-bullet-point-white.svg");
+      }
+
+      &:nth-of-type(5n + 2) {
+        list-style-image: url($root + "/assets/icons/splat-bullet-point-white.svg");
+      }
+
+      &:nth-of-type(5n + 3) {
+        list-style-image: url($root + "/assets/icons/crosshair-bullet-point-white.svg");
+      }
+
+      &:nth-of-type(5n + 4) {
+        list-style-image: url($root + "/assets/icons/wave-bullet-point-white.svg");
+      }
+
+      &:nth-of-type(5n + 5) {
+        list-style-image: url($root + "/assets/icons/horns-bullet-point-white.svg");
+      }
+
+      &::marker {
+        font-size: 1.5em;
+        line-height: 0.1;
+        color: #fff;
+      }
+    }
+  }
+}

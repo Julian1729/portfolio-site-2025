@@ -1,0 +1,36 @@
+@use "../abstracts" as *;
+
+.work-section {
+  position: relative;
+  background-color: $navy-blue;
+  padding-top: 100px;
+  z-index: 0;
+  background-image: url($root + "/assets/images/light-blue-splat.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  // &::before {
+  //   content: "";
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   right: 0;
+  //   width: 100%;
+  //   height: 800px;
+  //   background-image: url($root + "/assets/images/light-blue-splat.svg");
+  //   background-size: cover;
+  //   background-position: bottom;
+  //   z-index: -1;
+  // }
+
+  &__section-header {
+    margin-bottom: 100px;
+  }
+
+  &__list {
+    max-width: 700px;
+    margin-inline: auto;
+    display: grid;
+    gap: 50px;
+  }
+}

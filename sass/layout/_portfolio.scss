@@ -1,7 +1,15 @@
+@use "../abstracts" as *;
+
 .portfolio-section {
+  position: relative;
   padding-top: 100px;
   padding-bottom: 30px; // needed to hide overflow of tilt effect
-  overflow: hidden;
+  // overflow: hidden;
+
+  // hide overflow on tilt for smaller screens
+  @include max(1280px) {
+    overflow: hidden;
+  }
 
   &__featured-list {
     display: grid;

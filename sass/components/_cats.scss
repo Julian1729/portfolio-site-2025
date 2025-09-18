@@ -7,6 +7,15 @@
   column-gap: 24px;
   row-gap: 12px;
 
+  &__link {
+    color: inherit;
+    text-underline-offset: 3px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
   &--centered {
     justify-content: center;
   }

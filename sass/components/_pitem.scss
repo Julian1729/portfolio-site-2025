@@ -110,7 +110,10 @@ $pitem_breakpoint_3: 575px;
   }
 
   &--featured {
-    padding: 0;
+    @include min($pitem_breakpoint_3) {
+      padding: 0;
+    }
+
     border: none;
 
     // Animated gradient border using pseudo-element
@@ -134,10 +137,12 @@ $pitem_breakpoint_3: 575px;
     }
 
     #{$self}__content {
-      padding: 85px 48px;
-      max-width: 45%;
-      margin: 0;
-      text-align: left;
+      @include min($pitem_breakpoint_3) {
+        padding: 85px 48px;
+        max-width: 45%;
+        margin: 0;
+        text-align: left;
+      }
 
       @include max($pitem_breakpoint_1) {
         max-width: 65%;
@@ -153,7 +158,7 @@ $pitem_breakpoint_3: 575px;
     }
 
     #{$self}__tech-pills {
-      @include max($pitem_breakpoint_1) {
+      @include between($pitem_breakpoint_1, $pitem_breakpoint_3) {
         max-width: 83%;
       }
     }
@@ -163,12 +168,18 @@ $pitem_breakpoint_3: 575px;
     }
 
     #{$self}__logo {
-      position: absolute;
-      top: 30px;
-      left: 48px;
-      max-height: 76px;
-      max-width: 200px;
-      display: none;
+      @include min($pitem_breakpoint_3) {
+        position: absolute;
+        top: 30px;
+        left: 48px;
+        max-height: 76px;
+        max-width: 200px;
+        display: none;
+      }
+
+      @include max($pitem_breakpoint_3) {
+        display: block;
+      }
     }
 
     #{$self}__image-window {

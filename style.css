@@ -34,6 +34,9 @@ Text Domain: julian2025
 /* -------------------------------------------------------------------------- */
 /*                                   Resets                                   */
 /* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+/*                                    Text                                    */
+/* -------------------------------------------------------------------------- */
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -53,7 +56,6 @@ h5,
 h6,
 p,
 blockquote,
-pre,
 a,
 abbr,
 acronym,
@@ -1053,8 +1055,12 @@ Text Domain: julian2025
 	z-index: 99;
 }
 .pitem--featured {
-	padding: 0;
 	border: none;
+}
+@media screen and (min-width: 575px) {
+	.pitem--featured {
+		padding: 0;
+	}
 }
 .pitem--featured::before {
 	content: "";
@@ -1073,11 +1079,13 @@ Text Domain: julian2025
 	        animation: rotate-border 60s linear infinite;
 	z-index: -1;
 }
-.pitem--featured .pitem__content {
-	padding: 85px 48px;
-	max-width: 45%;
-	margin: 0;
-	text-align: left;
+@media screen and (min-width: 575px) {
+	.pitem--featured .pitem__content {
+		padding: 85px 48px;
+		max-width: 45%;
+		margin: 0;
+		text-align: left;
+	}
 }
 @media screen and (max-width: 1000px) {
 	.pitem--featured .pitem__content {
@@ -1094,7 +1102,7 @@ Text Domain: julian2025
 		max-width: 100%;
 	}
 }
-@media screen and (max-width: 1000px) {
+@media (min-width: 1000px) and (max-width: 575px) {
 	.pitem--featured .pitem__tech-pills {
 		max-width: 83%;
 	}
@@ -1102,13 +1110,20 @@ Text Domain: julian2025
 .pitem--featured .pitem__title {
 	margin-bottom: 32px;
 }
-.pitem--featured .pitem__logo {
-	position: absolute;
-	top: 30px;
-	left: 48px;
-	max-height: 76px;
-	max-width: 200px;
-	display: none;
+@media screen and (min-width: 575px) {
+	.pitem--featured .pitem__logo {
+		position: absolute;
+		top: 30px;
+		left: 48px;
+		max-height: 76px;
+		max-width: 200px;
+		display: none;
+	}
+}
+@media screen and (max-width: 575px) {
+	.pitem--featured .pitem__logo {
+		display: block;
+	}
 }
 .pitem--featured .pitem__image-window {
 	height: 200%;
@@ -1166,6 +1181,13 @@ Text Domain: julian2025
 	   -moz-column-gap: 24px;
 	        column-gap: 24px;
 	row-gap: 12px;
+}
+.cats__link {
+	color: inherit;
+	text-underline-offset: 3px;
+}
+.cats__link:hover {
+	text-decoration: underline;
 }
 .cats--centered {
 	justify-content: center;
@@ -1244,6 +1266,118 @@ Text Domain: julian2025
 	left: 0;
 	width: 100%;
 	height: 100%;
+}
+
+/*!
+Theme Name: Julian 2025
+Theme URI: https://julianhernandez.me/
+Author: Julian Hernandez
+Author URI: https://julianhernandez./
+Description: A portfolio site for Julian Hernandez
+Version: 1.0.0
+Text Domain: julian2025
+*/
+.witem__title {
+	font-size: 32px;
+	color: #fff;
+	font-weight: 700;
+	margin-bottom: 10px;
+}
+.witem__meta {
+	margin-bottom: 15px;
+}
+.witem__logo {
+	display: block;
+	margin-bottom: 20px;
+	width: 100px;
+	height: auto;
+	-o-object-fit: contain;
+	   object-fit: contain;
+}
+.witem__logo--company--doctor-multimedia {
+	width: 170px;
+}
+.witem__logo--company--premiere-brand {
+	width: 50px;
+}
+.witem__logo-link {
+	display: inline-block;
+}
+.witem__description {
+	color: rgba(255, 255, 255, 0.8);
+	line-height: 1.4;
+}
+.witem__description p {
+	margin-bottom: 20px;
+	font-size: 18px;
+}
+@media screen and (max-width: 500px) {
+	.witem__description p {
+		font-size: 16px;
+	}
+}
+.witem__description h1,
+.witem__description h2,
+.witem__description h3,
+.witem__description h4,
+.witem__description h5,
+.witem__description h6 {
+	color: #fff;
+	margin-bottom: 10px;
+	line-height: 1.2;
+}
+.witem__description a {
+	color: #8699aa;
+	text-decoration: underline;
+}
+.witem__description a:hover {
+	color: rgb(104.3932038835, 127.7281553398, 148.6067961165);
+}
+.witem__description ul,
+.witem__description ol {
+	margin-left: 20px;
+	margin-bottom: 20px;
+}
+.witem__description ul li,
+.witem__description ol li {
+	margin-bottom: 10px;
+	font-size: 18px;
+}
+@media screen and (max-width: 500px) {
+	.witem__description ul li,
+	.witem__description ol li {
+		font-size: 16px;
+	}
+}
+.witem__description img {
+	max-width: 100%;
+	height: auto;
+}
+.witem__description strong {
+	font-weight: 700;
+}
+.witem__description em {
+	font-style: italic;
+}
+.witem__description li:nth-of-type(5n + 1) {
+	list-style-image: url("/wp-content/themes/julian2025/assets/icons/x-bullet-point-white.svg");
+}
+.witem__description li:nth-of-type(5n + 2) {
+	list-style-image: url("/wp-content/themes/julian2025/assets/icons/splat-bullet-point-white.svg");
+}
+.witem__description li:nth-of-type(5n + 3) {
+	list-style-image: url("/wp-content/themes/julian2025/assets/icons/crosshair-bullet-point-white.svg");
+}
+.witem__description li:nth-of-type(5n + 4) {
+	list-style-image: url("/wp-content/themes/julian2025/assets/icons/wave-bullet-point-white.svg");
+}
+.witem__description li:nth-of-type(5n + 5) {
+	list-style-image: url("/wp-content/themes/julian2025/assets/icons/horns-bullet-point-white.svg");
+}
+.witem__description li::marker {
+	font-size: 1.5em;
+	line-height: 0.1;
+	color: #fff;
 }
 
 /*!
@@ -1495,56 +1629,27 @@ Description: A portfolio site for Julian Hernandez
 Version: 1.0.0
 Text Domain: julian2025
 */
-.main {
-	position: relative;
+.main-splat-container {
 	padding-top: 125px;
+	position: relative;
 	z-index: 0;
 }
-
-.main-splat {
+.main-splat-container::before {
+	content: "";
 	position: absolute;
 	top: 0;
 	left: 0;
 	right: 0;
-	pointer-events: none;
+	width: 100%;
+	height: 50%;
+	max-height: 100%;
+	background-image: url("/wp-content/themes/julian2025/assets/images/main-splat.svg");
+	background-size: cover;
+	background-position: top;
+	background-repeat: no-repeat;
 	z-index: -1;
-	overflow: hidden;
 }
-.main-splat::before {
-	content: "";
-	position: relative;
-	width: 100%;
-	height: 0;
-	display: block;
-	background-color: #232429;
-}
-@media screen and (max-width: 700px) {
-	.main-splat::before {
-		height: 20vh;
-	}
-}
-@media screen and (max-width: 500px) {
-	.main-splat::before {
-		height: 35vh;
-	}
-}
-.main-splat__image {
-	position: relative;
-	display: flex;
-	width: 100%;
-	top: clamp(-600px, -20vw, -200px);
-}
-@media screen and (max-width: 768px) {
-	.main-splat__image {
-		top: 0;
-		width: 150%;
-	}
-}
-@media screen and (max-width: 500px) {
-	.main-splat__image {
-		width: 200%;
-	}
-}
+
 /*!
 Theme Name: Julian 2025
 Theme URI: https://julianhernandez.me/
@@ -1576,10 +1681,24 @@ Text Domain: julian2025
 	width: auto;
 }
 
+/*!
+Theme Name: Julian 2025
+Theme URI: https://julianhernandez.me/
+Author: Julian Hernandez
+Author URI: https://julianhernandez./
+Description: A portfolio site for Julian Hernandez
+Version: 1.0.0
+Text Domain: julian2025
+*/
 .portfolio-section {
+	position: relative;
 	padding-top: 100px;
 	padding-bottom: 30px;
-	overflow: hidden;
+}
+@media screen and (max-width: 1280px) {
+	.portfolio-section {
+		overflow: hidden;
+	}
 }
 .portfolio-section__featured-list {
 	display: grid;
@@ -1590,5 +1709,33 @@ Text Domain: julian2025
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 	gap: 40px;
+}
+
+/*!
+Theme Name: Julian 2025
+Theme URI: https://julianhernandez.me/
+Author: Julian Hernandez
+Author URI: https://julianhernandez./
+Description: A portfolio site for Julian Hernandez
+Version: 1.0.0
+Text Domain: julian2025
+*/
+.work-section {
+	position: relative;
+	background-color: #232429;
+	padding-top: 100px;
+	z-index: 0;
+	background-image: url("/wp-content/themes/julian2025/assets/images/light-blue-splat.svg");
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+.work-section__section-header {
+	margin-bottom: 100px;
+}
+.work-section__list {
+	max-width: 700px;
+	margin-inline: auto;
+	display: grid;
+	gap: 50px;
 }
 /*# sourceMappingURL=style.css.map */

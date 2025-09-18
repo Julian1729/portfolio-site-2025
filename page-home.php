@@ -13,10 +13,12 @@ $projects_args = [
   'post_type' => 'projects',
   'posts_per_page' => -1,
   'orderby' => 'menu_order',
-  // 'order' => 'DESC',
+  'order' => 'ASC',
 ];
 $projects_query = new WP_Query($projects_args);
 
+// get work history from theme options
+$work_history = get_field('work_history', 'option');
 ?>
 
 <header class="header">
@@ -270,53 +272,79 @@ $projects_query = new WP_Query($projects_args);
 </header>
 
 <main class="main">
-  <div class="main-splat">
+  <!-- <div class="main-splat">
     <img class="main-splat__image" src="<?php echo get_template_directory_uri(); ?>/assets/images/main-splat.svg" alt="Colorful paint splat">
+  </div> -->
+
+  <div class="main-splat-container">
+
+    <section class="skills-section container">
+
+      <h2 class="section-header">My Skills</h2>
+
+      <?php get_template_part('template-parts/content', 'skills-list'); ?>
+
+    </section>
+
+    <section class="portfolio-section" id="my-work">
+
+      <div class="container">
+
+        <h2 class="section-header">My Projects</h2>
+
+        <!-- Featured Portfolio Items -->
+        <ul class="portfolio-section__featured-list">
+
+          <?php
+
+          while ($projects_query->have_posts()) {
+            $projects_query->the_post();
+            if (!get_field('featured', $post->ID)) continue;
+            get_template_part('template-parts/content', 'project-item');
+          }
+          wp_reset_postdata();
+
+          ?>
+
+        </ul>
+
+        <!-- Regular Portfolio Items -->
+        <ul class="portfolio-section__regular-list">
+
+          <?php
+
+          while ($projects_query->have_posts()) {
+            $projects_query->the_post();
+            if (get_field('featured', $post->ID)) continue;
+            get_template_part('template-parts/content', 'project-item');
+          }
+          wp_reset_postdata();
+
+          ?>
+
+        </ul>
+
+      </div>
+
+    </section>
+
   </div>
 
-  <section class="skills-section container">
+  <section class="work-section ">
 
-    <h2 class="section-header">My Skills</h2>
+    <div class="container">
 
-    <?php get_template_part('template-parts/content', 'skills-list'); ?>
+      <h2 class="section-header work-section__section-header">My Work History</h2>
 
-  </section>
+      <ul class="work-section__list">
+        <?php
+        foreach ($work_history as $item) {
+          get_template_part('template-parts/content', 'work-item', ['item' => $item]);
+        }
+        ?>
+      </ul>
+    </div>
 
-  <section class="portfolio-section container" id="my-work">
-
-    <h2 class="section-header">My Projects</h2>
-
-    <!-- Featured Portfolio Items -->
-    <ul class="portfolio-section__featured-list">
-
-      <?php
-
-      while ($projects_query->have_posts()) {
-        $projects_query->the_post();
-        if (!get_field('featured', $post->ID)) continue;
-        get_template_part('template-parts/content', 'project-item');
-      }
-      wp_reset_postdata();
-
-      ?>
-
-    </ul>
-
-    <!-- Regular Portfolio Items -->
-    <ul class="portfolio-section__regular-list">
-
-      <?php
-
-      while ($projects_query->have_posts()) {
-        $projects_query->the_post();
-        if (get_field('featured', $post->ID)) continue;
-        get_template_part('template-parts/content', 'project-item');
-      }
-      wp_reset_postdata();
-
-      ?>
-
-    </ul>
 
   </section>
 

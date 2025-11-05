@@ -37,7 +37,7 @@ $has_company_link = $item['company'] && $item['company']['url'] !== '#' && $item
         <span class="cats__text"><?php echo esc_html($item['company']['title']); ?></span>
       <?php endif; ?>
     </li>
-    <li class="cats__item">March 2021 - February 2024</li>
+    <li class="cats__item"><?php echo esc_html($item['range']); ?></li>
   </ul>
 
   <div class="witem__description">

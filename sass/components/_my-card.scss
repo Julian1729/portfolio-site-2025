@@ -144,6 +144,7 @@ $clip_breakpoint: 600px; // NOTE: same as header clip-path change breakpoint
     display: flex;
     align-items: center;
     justify-content: center;
+    text-decoration: none;
     gap: 10px;
     background-color: #51659b;
     border-bottom-left-radius: $border-radius;
@@ -175,6 +176,13 @@ $clip_breakpoint: 600px; // NOTE: same as header clip-path change breakpoint
       width: 18px;
       fill: #fff;
     }
+  }
+
+  &__time {
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 13px;
+    text-align: center;
+    padding-bottom: 20px;
   }
 }
 

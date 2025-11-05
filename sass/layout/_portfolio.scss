@@ -3,8 +3,10 @@
 .portfolio-section {
   position: relative;
   padding-top: 100px;
-  padding-bottom: 30px; // needed to hide overflow of tilt effect
+  // padding-bottom: 30px; // needed to hide overflow of tilt effect
   // overflow: hidden;
+  padding-bottom: clamp(80px, 10vw, 150px);
+  // background-color: $light-blue;
 
   // hide overflow on tilt for smaller screens
   @include max(1280px) {
@@ -19,7 +21,7 @@
   &__regular-list {
     margin-top: 30px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
     gap: 40px;
   }
 }

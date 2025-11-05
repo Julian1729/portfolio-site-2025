@@ -19,6 +19,10 @@ $projects_query = new WP_Query($projects_args);
 
 // get work history from theme options
 $work_history = get_field('work_history', 'option');
+
+// get time in East Coast
+// date_default_timezone_set('America/New_York');
+// $time = date('g:i a');
 ?>
 
 <header class="header">
@@ -145,6 +149,8 @@ $work_history = get_field('work_history', 'option');
             </nav>
           </div>
         </div>
+
+        <!-- <p class="my-card__time">It is currently <?php echo $time; ?> for me, <br> contact me anytime!</p> -->
       </div>
 
       <div class="my-card__footer">
@@ -246,21 +252,21 @@ $work_history = get_field('work_history', 'option');
 
       <p class="header__content-text">
 
-        <a class="button" href="<?php echo get_template_directory_uri(); ?>/assets/downloads/JulianHernandez_FullStackDeveloper.pdf" download>Download my resume</a>
+        <a class="button" href="<?php echo get_template_directory_uri(); ?>/assets/downloads/JulianHernandez_FullStackDeveloper_ATF.pdf" download>Download my resume</a>
 
         <span class="header__seperator-text">or learn about</span>
 
         <span class="header__content-text-btns">
-          <a class="button">My Self</a>
-          <a class="button">My Work History</a>
-          <a class="button">My Projects</a>
+          <a class="button" href="#julian">My Self</a>
+          <a class="button" href="#julians-work">My Work History</a>
+          <a class="button" href="#julians-portfolio">My Projects</a>
         </span>
 
         <span class="header__seperator-text">or tldr</span>
 
 
         <span class="header__tldr">
-          <strong>Philadelphia</strong> based full stack developer with <strong>over 7 years of professional experience</strong> with technologies such as <strong>React, Wordpress, Gutenberg, Node.js and PHP</strong>. I've worked on projects for large brands such as LASIK, Volvo, Vanguard University, United Healthcare, and Temple University.
+          I am a <strong>Philadelphia</strong> based full stack developer with <strong>over 7 years of professional experience</strong> with technologies such as <strong>React, Wordpress, Gutenberg, Node.js and PHP</strong>. I've worked on projects for large brands such as LASIK, Volvo, Vanguard University, United Healthcare, and Temple University.
         </span>
       </p>
 
@@ -278,7 +284,7 @@ $work_history = get_field('work_history', 'option');
 
   <div class="main-splat-container">
 
-    <section class="skills-section container">
+    <section class="skills-section container" id="julians-skills">
 
       <h2 class="section-header">My Skills</h2>
 
@@ -286,7 +292,7 @@ $work_history = get_field('work_history', 'option');
 
     </section>
 
-    <section class="portfolio-section" id="my-work">
+    <section class="portfolio-section" id="julians-portfolio">
 
       <div class="container">
 
@@ -330,7 +336,7 @@ $work_history = get_field('work_history', 'option');
 
   </div>
 
-  <section class="work-section ">
+  <section class="work-section" id="julians-work">
 
     <div class="container">
 
@@ -345,6 +351,154 @@ $work_history = get_field('work_history', 'option');
       </ul>
     </div>
 
+  </section>
+
+  <div class="funny-section">
+
+    <div class="funny-section__inner">
+      <p class="funny-section__wow">wow!</p>
+
+      <div class="funny-section__middle-container">
+        <p class="funny-section__likeme">
+          you scrolled this far...
+          <br>
+          you must really like me!
+        </p>
+
+        <img class="funny-section__image" src="<?php echo get_template_directory_uri(); ?>/assets/images/oh-stop-it-you.png" alt="Oh stop it you! meme">
+      </div>
+
+      <div class="funny-section__bottom-container">
+        <p class="funny-section__scroll-text">
+          keep scrolling to learn
+          <br>
+          a little more about me!
+        </p>
+
+        <img class="funny-section__arrow" src="<?php echo get_template_directory_uri(); ?>/assets/images/drawn-arrow-down.svg" alt="Drawn arrow pointing down">
+      </div>
+    </div>
+
+  </div>
+
+  <section class="about-section" id="julian">
+    <h2 class="about-section__section-header section-header">About Me...</h2>
+
+    <div class="container container--size--lg">
+      <div class="about-section__city">
+
+        <div class="about-section__city-image-container">
+          <img class="about-section__city-image" src="<?php echo get_template_directory_uri(); ?>/assets/images/philadelphia-with-text-2.svg" alt="Philadelphia shape">
+          <i class="about-section__beacon"></i>
+        </div>
+
+        <div class="about-section__city-game-container">
+
+          <?php echo get_template_part('template-parts/section', 'team-scores'); ?>
+
+        </div>
+      </div>
+
+      <div class="about-section__playful-half playful-half">
+        <div class="playful-half__description-container">
+          <p class="playful-half__description">
+            Tripleten sent a video team out to Philly to make a profile on a day in my life as a Software Engineer and their Senior Tutor
+          </p>
+          <img class="playful-half__arrow playful-half__arrow--right" src="<?php echo get_template_directory_uri(); ?>/assets/images/drawn-arrow-right-white.svg" alt="White arrow pointing to Julian's Day in the life video">
+        </div>
+
+        <div class="playful-half__video-container">
+          <div class="playful-half__video-wrapper">
+            <iframe class="playful-half__iframe" src="https://www.youtube.com/embed/ZutX_sj893w?si=JKi1s6DazLAUOsrt&amp;controls=1&amp;autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=ZutX_sj893w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-section__playful-half playful-half playful-half--reverse">
+        <div class="playful-half__video-container">
+          <div class="playful-half__video-wrapper">
+            <iframe class="playful-half__iframe" src="https://www.youtube.com/embed/S_mwF1G6IOM?si=Wwm0LaeZ0mu5q8WA&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <div class="playful-half__description-container">
+          <img class="playful-half__arrow playful-half__arrow--right" src="<?php echo get_template_directory_uri(); ?>/assets/images/drawn-arrow-right-white.svg" alt="White arrow pointing to Julian's Day in the life video">
+          <p class="playful-half__description">
+            Check me out as a guest on the Tech Start podcast with Will Newson as I talk about my journey into tech, and working in the industry
+          </p>
+        </div>
+
+      </div>
+
+      <div class="about-section__degree">
+        <h3 class="about-section__degree-header">My Computer Science degree</h3>
+
+        <div class="about-section__degree-container">
+
+          <!-- <div class="note">
+            <p class="note__heading">On a serious note...</p>
+            <p class="note__text">While I don't have a formal computer science degree, I've built my career by teaching myself and quickly adapting to new challenges. Over the years, I've "learned how to learn" ... picking up new tools, technologies, and processes fast and putting them to use right away. That ability to self-teach and adapt has been at the core of my growth and is often more valuable than a traditional degree in today's fast-changing industry.</p>
+          </div> -->
+
+          <div class="about-section__degree-inner">
+            <img class="about-section__degree-icon" src="<?php echo get_template_directory_uri(); ?>/assets/images/404-icon.png" alt="Google Chrome 404 error icon">
+
+            <p class="about-section__degree-headline">This <strong>degree</strong> can't be found</p>
+
+            <p class="about-section__degree-subheading">No <em>computer science degree</em> was found for <span class="break-word"><strong>https://julianhernandez.me</strong></span></p>
+            <!-- <p class="about-section__degree-subheading">No <em>computer science degree</em> was found for <strong>Julian Hernandez</strong></p> -->
+
+            <p class="about-section__degree-status">HTTP ERROR 404</p>
+
+            <div class="about-section__try">
+              <p class="about-section__try-text">Try:</p>
+
+              <ul class="about-section__try-list">
+                <li class="about-section__try-item">
+                  <a href="#julians-portfolio">Reviewing my real world projects I've shipped</a>
+                </li>
+                <li class="about-section__try-item">
+                  <a href="#julians-work">Taking a look at my seven years worth of professional experience</a>
+                </li>
+                <li class="about-section__try-item">Trusting proven work experience and projects over a piece of paper</li>
+            </div>
+
+            <button class="about-section__degree-reload">Details</button>
+
+            <div class="about-section__degree-more-info">
+            </div>
+
+            <div class="about-section__degree-note note">
+              <div class="note__tape"></div>
+
+              <p class="about-section__more-info-heading">On a serious note...</p>
+              <p class="about-section__more-info-text">While I don't have a formal computer science degree, I've built my career by teaching myself and quickly adapting to new challenges. Over the years, I've "learned how to learn" ... picking up new tools, technologies, and processes fast and putting them to use right away. That ability to self-teach and adapt has been at the core of my growth and in my opinion is far more valuable than a traditional degree in today's fast changing industry.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-section__next">
+
+
+
+        <div class="about-section__whats-next">soooooo <br> what's next for me?</div>
+
+        <div class="about-section__blob-container">
+
+          <!-- <div class="about-section__next-blob"> -->
+          <!-- <img class="about-section__blob" src="<?php echo get_template_directory_uri(); ?>/assets/images/blob.svg" alt=""> -->
+
+          <div class="about-section__video-wrapper">
+            <video class="about-section__video" src="<?php echo get_template_directory_uri(); ?>/assets/videos/memoji-searching.mp4" autoplay muted loop playsinline></video>
+          </div>
+          <!-- </div> -->
+
+        </div>
+
+      </div>
+
+    </div>
 
   </section>
 

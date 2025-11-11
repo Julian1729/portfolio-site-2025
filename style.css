@@ -2042,7 +2042,7 @@ Text Domain: julian2025
 .about-section__beacon {
 	position: absolute;
 	top: 31%;
-	right: 38%;
+	right: 36%;
 	height: 12px;
 	width: 12px;
 	z-index: 1;
@@ -2509,6 +2509,7 @@ Text Domain: julian2025
 	overflow: hidden;
 	margin-left: auto;
 	display: flex;
+	border: solid #fff 6px;
 }
 @media screen and (max-width: 1000px) {
 	.playful-half__video-wrapper {

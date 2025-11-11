@@ -45,7 +45,7 @@ $work_history = get_field('work_history', 'option');
             <div class="pfp__quip pfp__quip--one">
               <img class="pfp__quip-arrow" src="<?php echo get_template_directory_uri(); ?>/assets/images/drawn-arrow-right-md.svg" alt="Handrawn arrow pointing at Julian's profile picture">
               <p class="pfp__quip-text">
-                uses and old photo
+                uses an old photo
                 <br>
                 because he got fat
               </p>

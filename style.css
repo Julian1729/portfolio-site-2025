@@ -1819,6 +1819,9 @@ Text Domain: julian2025
 .skills-list__item {
 	text-align: center;
 }
+.skills-list__item--name--php img {
+	max-width: 78px;
+}
 .skills-list__name {
 	color: #acacac;
 	text-transform: uppercase;

@@ -186,46 +186,6 @@ $work_history = get_field('work_history', 'option');
 
       <div class="header__content-mobile-container">
 
-        <!-- <img class="pfp header__mobile-pfp" src="<?php echo get_template_directory_uri(); ?>/assets/images/julian_2018.png" alt="Julian Hernandez when he was sexy and young"> -->
-
-        <?php /*
-        <div class="pfp">
-          <div class="pfp__quip-container">
-            <!-- fat photo quip -->
-            <div class="pfp__quip pfp__quip--one">
-              <img class="pfp__quip-arrow" src="<?php echo get_template_directory_uri(); ?>/assets/images/drawn-arrow-right-md.svg" alt="Handrawn arrow pointing at Julian's profile picture">
-              <p class="pfp__quip-text">
-                uses and old photo
-                <br>
-                because he got fat
-              </p>
-            </div>
-
-            <!-- can bench 315 quip -->
-            <div class="pfp__quip pfp__quip--two">
-              <p class="pfp__quip-text">
-                can bench 315 lbs
-                <br>
-                believe it or not
-              </p>
-              <img class="pfp__quip-arrow" src="<?php echo get_template_directory_uri(); ?>/assets/images/drawn-arrow-right-sm.svg" alt="Handrawn arrow pointing at Julian's profile picture">
-            </div>
-          </div>
-          <img class="pfp__image" src="<?php echo get_template_directory_uri(); ?>/assets/images/julian_2018.png" alt="Julian Hernandez when he was sexy and young">
-          <div class="pfp__quip-container">
-
-            <div class="pfp__quip pfp__quip--three">
-              <p class="pfp__quip-text">
-                27 years old...
-                <br>
-                but looks 32
-              </p>
-              <img class="pfp__quip-arrow" src="<?php echo get_template_directory_uri(); ?>/assets/images/drawn-arrow-left-md.svg" alt="Handrawn arrow pointing at Julian's profile picture">
-            </div>
-
-          </div>
-        </div> */ ?>
-
         <div class="header__mobile-skill-orbit skill-orbit skill-orbit--type--photo">
           <img class="skill-orbit__center-image" src="<?php echo get_template_directory_uri(); ?>/assets/images/julian_2018.png" alt="Julian Hernandez when he was sexy and young">
           <div class="skill-orbit__ring skill-orbit__ring--outer">
@@ -252,7 +212,7 @@ $work_history = get_field('work_history', 'option');
 
       <p class="header__content-text">
 
-        <a class="button" href="<?php echo get_template_directory_uri(); ?>/assets/downloads/JulianHernandez_FullStackDeveloper_ATF.pdf" download>Download my resume</a>
+        <a class="button" href="<?php echo get_template_directory_uri(); ?>/assets/downloads/JulianHernandez_FullStackDeveloper_HumanResume_SWD.pdf" download>Download my resume</a>
 
         <span class="header__seperator-text">or learn about</span>
 

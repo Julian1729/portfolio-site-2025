@@ -12,6 +12,12 @@
 
   &__item {
     text-align: center;
+
+    &--name--php {
+      img {
+        max-width: 78px;
+      }
+    }
   }
 
   &__name {
